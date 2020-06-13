@@ -1,24 +1,8 @@
-@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
-
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-a, .btn-link {
-    color: #0366d6;
-}
-
-app {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.main {
-    flex: 1;
-}
-
-.sidebar {
-    background-color: black;
-    color: white;
+.container {
+    display: grid;
+    grid-template-columns: 200px auto;
 }
