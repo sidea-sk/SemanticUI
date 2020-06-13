@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Perun.Presentation.Semantic.Core
+namespace Sidea.SemanticUI.Core
 {
     [Flags]
     public enum Position

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Perun.Presentation.Semantic.Core;
+using Sidea.SemanticUI.Core;
 
-namespace Perun.Presentation.Semantic.Core
+namespace Sidea.SemanticUI.Core
 {
     public class IconData
     {

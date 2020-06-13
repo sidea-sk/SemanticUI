@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Perun.Presentation.Semantic.Core.Tooltips
+namespace Sidea.SemanticUI.Core.Tooltips
 {
     public static class TooltipsExtensions
     {

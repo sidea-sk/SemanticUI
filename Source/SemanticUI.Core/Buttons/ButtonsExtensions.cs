@@ -1,4 +1,4 @@
-﻿namespace Perun.Presentation.Semantic.Core.Buttons
+﻿namespace Sidea.SemanticUI.Semantic.Core
 {
     public static class ButtonsExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace Perun.Presentation.Semantic.Core.Tooltips
+﻿namespace Sidea.SemanticUI.Core.Tooltips
 {
     public class Tooltip
     {

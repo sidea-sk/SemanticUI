@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Perun.Presentation.Semantic.Core
+namespace Sidea.SemanticUI.Core
 {
     public static class ClassTools
     {
