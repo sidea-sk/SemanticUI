@@ -1,9 +1,16 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
-    <Sidebar />
-</div>
+    <div class="container">
 
-<div class="main">
-    @Body
-</div>
+
+        <div>
+            <Sidebar />
+        </div>
+
+        <div>
+            <Container>
+                @Body
+            </Container>
+        </div>
+    </div>
+
