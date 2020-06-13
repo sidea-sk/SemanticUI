@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sidea.SemanticUI.Core.Tooltips
+namespace Sidea.SemanticUI.Core
 {
     public static class TooltipsExtensions
     {

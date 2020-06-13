@@ -1,4 +1,4 @@
-﻿namespace Sidea.SemanticUI.Core.Tooltips
+﻿namespace Sidea.SemanticUI.Core
 {
     public class Tooltip
     {
