@@ -1,0 +1,55 @@
+﻿@inherits SemanticComponent
+
+<i class="@Class()" @onclick="OnClick"></i>
+
+@code {
+
+    private IconData _data = new IconData();
+
+    public Icon() : base("icon")
+    {
+    }
+
+    [Parameter]
+    public IconData Data
+    {
+        get => _data;
+        set => _data = value ?? new IconData();
+    }
+
+    [Parameter]
+    public string Name
+    {
+        get => _data.Name;
+        set => _data.Name = value;
+    }
+
+    [Parameter]
+    public Size Size
+    {
+        get => _data.Size;
+        set => _data.Size = value;
+    }
+
+    [Parameter]
+    public Color Color
+    {
+        get => _data.Color;
+        set => _data.Color = value;
+    }
+
+    [Parameter]
+    public bool Link
+    {
+        get => _data.Link;
+        set => _data.Link = value;
+    }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+    protected override IEnumerable<string> Classes()
+    {
+        yield return _data.ToClass();
+    }
+}
