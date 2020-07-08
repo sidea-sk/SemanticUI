@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Sidea.SemanticUI.Core;
 
 namespace Sidea.SemanticUI.Core
 {
