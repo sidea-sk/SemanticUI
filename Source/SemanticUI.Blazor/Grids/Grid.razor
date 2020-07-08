@@ -24,7 +24,7 @@
     protected override IEnumerable<string> Classes()
     {
         yield return this.Columns.ToClass("column");
-        yield return this.Stackable.ToClassIf("stackable");
+        yield return "stackable".ToClassIf(this.Stackable);
     }
 
     protected override IEnumerable<string> AfterCssNameClasses()

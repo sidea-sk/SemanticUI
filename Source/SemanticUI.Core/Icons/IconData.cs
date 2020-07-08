@@ -19,7 +19,7 @@ namespace Sidea.SemanticUI.Core
             yield return this.Name;
             yield return this.Size.ToClass();
             yield return this.Color.ToClass();
-            yield return this.Link.ToClassIf("link");
+            yield return "link".ToClassIf(this.Link);
         }
     }
 }

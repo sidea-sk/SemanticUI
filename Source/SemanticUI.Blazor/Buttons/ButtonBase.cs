@@ -41,13 +41,13 @@ namespace Sidea.SemanticUI.Blazor.Buttons
 
         protected override IEnumerable<string> Classes()
         {
-            yield return this.Icon.ToClassIf("icon");
-            yield return this.Fluid.ToClassIf("fluid");
+            yield return "icon".ToClassIf(this.Icon);
+            yield return "fluid".ToClassIf(this.Fluid);
             yield return this.Color.ToClass();
             yield return this.Size.ToClass();
-            yield return this.Basic.ToClassIf("basic");
+            yield return "basic".ToClassIf(this.Basic);
             yield return this.Emphasizes.ToClass();
-            yield return this.IsBusy.ToClassIf("sync loading");
+            yield return "sync loading".ToClassIf(this.IsBusy);
         }
     }
 }

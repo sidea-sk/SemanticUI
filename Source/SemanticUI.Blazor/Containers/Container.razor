@@ -22,6 +22,6 @@
     protected override IEnumerable<string> Classes()
     {
         yield return this.Alignment.ToAlignmentClass();
-        yield return this.Fluid.ToClassIf("fluid");
+        yield return "fluid".ToClassIf(this.Fluid);
     }
 }
