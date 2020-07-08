@@ -1,11 +1,27 @@
 ﻿@page "/"
 
 <h3>Index</h3>
-<Button Type="Submit"
-        Color="Red"
-        Basic="true">
-    Test button
-</Button>
+
+<Segment>
+    <Button Type="Submit"
+            Color="Red"
+            Basic="true">
+        Test button
+    </Button>
+</Segment>
+
+<Segment>
+    <SeInput Decorations="LabeledRight | InputDecorations.Icon">
+        <Left>
+            <Icon Name="tags" />
+        </Left>
+        <Right>
+            <a class="ui tag label">
+                Add Tag
+            </a>
+        </Right>
+    </SeInput>
+</Segment>
 
 @code {
 
