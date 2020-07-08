@@ -121,9 +121,6 @@
     private bool HasItems => _data.Items?.Length > 0;
 
     [Parameter]
-    public RenderFragment ChildContent { get; set; }
-
-    [Parameter]
     public EventCallback<MouseEventArgs> OnIconClick { get; set; }
 
     [Parameter]

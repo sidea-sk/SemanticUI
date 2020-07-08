@@ -12,9 +12,6 @@
     [Parameter]
     public bool IsTextValue { get; set; }
 
-    [Parameter]
-    public RenderFragment ChildContent { get; set; }
-
     protected override IEnumerable<string> Classes()
     {
         yield return "text".ToClassIf(this.IsTextValue);

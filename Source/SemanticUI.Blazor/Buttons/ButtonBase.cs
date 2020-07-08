@@ -11,9 +11,6 @@ namespace Sidea.SemanticUI.Blazor.Buttons
         }
 
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
-
-        [Parameter]
         public bool IsBusy { get; set; }
 
         [Parameter]

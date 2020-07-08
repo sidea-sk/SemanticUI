@@ -16,6 +16,9 @@ namespace Sidea.SemanticUI.Blazor
         }
 
         [Parameter]
+        public RenderFragment ChildContent { get; set; }
+
+        [Parameter]
         public Tooltip Tooltip
         {
             get => _tooltip;

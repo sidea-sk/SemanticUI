@@ -11,9 +11,6 @@ namespace Sidea.SemanticUI.Blazor.Menus
         }
 
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
-
-        [Parameter]
         public Color Color { get; set; }
 
         [Parameter]
