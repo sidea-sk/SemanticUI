@@ -2,7 +2,7 @@
 {
     public enum Size
     {
-        Default,
+        Undefined,
         Mini,
         Tiny,
         Small,

@@ -134,7 +134,7 @@
         yield return "icon".ToClassIf(this.HasIcon);
         yield return this.Severity.ToClass();
 
-        if (this.Severity == Severity.None)
+        if (this.Severity == Severity.NoSeverity)
         {
             yield return this.Color.ToClass();
         }

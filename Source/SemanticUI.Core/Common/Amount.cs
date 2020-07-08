@@ -2,7 +2,7 @@
 {
     public enum Amount
     {
-        Undefined,
+        Unlimited,
         One,
         Two,
         Three,

@@ -6,28 +6,28 @@ namespace Sidea.SemanticUI.Core
     {
         public static string ToClass(this Size size)
         {
-            return size == Size.Default
+            return size == Size.Undefined
                 ? string.Empty
                 : size.ToString().ToLower();
         }
 
         public static string ToClass(this Color color)
         {
-            return color == Color.Default
+            return color == Color.NoColor
                 ? string.Empty
                 : color.ToString().ToLower();
         }
 
         public static string ToClass(this Severity severity)
         {
-            return severity == Severity.None
+            return severity == Severity.NoSeverity
                 ? string.Empty
                 : severity.ToString().ToLower();
         }
 
         public static string ToClass(this Emphasizes emphasizes)
         {
-            return emphasizes == Emphasizes.None
+            return emphasizes == Emphasizes.NoEmphasizes
                 ? string.Empty
                 : emphasizes.ToString().ToLower();
         }
@@ -41,7 +41,7 @@ namespace Sidea.SemanticUI.Core
 
         public static string ToClass(this Amount count, string of)
         {
-            return count == Amount.Undefined
+            return count == Amount.Unlimited
                 ? string.Empty
                 : count.ToString().ToLower() + " " + of;
         }

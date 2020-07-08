@@ -2,11 +2,11 @@
 {
     public class MessageData
     {
-        public Severity Severity { get; set; } = Severity.None;
+        public Severity Severity { get; set; } = Severity.NoSeverity;
 
-        public Size Size { get; set; } = Size.Default;
+        public Size Size { get; set; } = Size.Undefined;
 
-        public Color Color { get; set; } = Color.Default;
+        public Color Color { get; set; } = Color.NoColor;
 
         public string Icon { get; set; }
 

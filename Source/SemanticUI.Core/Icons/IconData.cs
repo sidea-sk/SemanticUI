@@ -8,7 +8,7 @@ namespace Sidea.SemanticUI.Core
 
         public Size Size { get; set; }
 
-        public Color Color { get; set; } = Color.Default;
+        public Color Color { get; set; } = Color.NoColor;
 
         public bool Link { get; set; }
 

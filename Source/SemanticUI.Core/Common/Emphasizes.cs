@@ -2,7 +2,7 @@
 {
     public enum Emphasizes
     {
-        None,
+        NoEmphasizes,
         Secondary,
         Primary
     }
