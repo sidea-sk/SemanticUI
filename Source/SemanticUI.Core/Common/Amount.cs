@@ -2,7 +2,7 @@
 {
     public enum Amount
     {
-        Unlimited,
+        Undefined,
         One,
         Two,
         Three,
@@ -19,5 +19,15 @@
         Fourteen,
         Fifteen,
         Sixteen
+    }
+
+    public static class AmountExtensions
+    {
+        public static string ToClass(this Amount count, string of)
+        {
+            return count == Amount.Undefined
+                ? string.Empty
+                : count.ToString().ToLower() + " " + of;
+        }
     }
 }
