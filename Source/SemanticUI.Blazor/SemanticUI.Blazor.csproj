@@ -20,6 +20,7 @@
     <Folder Include="Messages\" />
     <Folder Include="Grids\" />
     <Folder Include="Forms\" />
+    <Folder Include="Statistics\" />
   </ItemGroup>
 
 </Project>
