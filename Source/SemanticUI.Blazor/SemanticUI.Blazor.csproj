@@ -6,7 +6,7 @@
         <OutputType>Library</OutputType>
         <AssemblyName>Sidea.SemanticUI.Blazor</AssemblyName>
         <RootNamespace>Sidea.SemanticUI.Blazor</RootNamespace>
-        <Version>0.1.1</Version>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
