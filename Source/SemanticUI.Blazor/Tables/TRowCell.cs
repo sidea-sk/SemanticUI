@@ -11,9 +11,6 @@ namespace Sidea.SemanticUI.Blazor.Tables
         }
 
         [Parameter]
-        public RenderFragment ChildContent { get; set; }
-
-        [Parameter]
         public bool Disabled { get; set; }
 
         [Parameter]
