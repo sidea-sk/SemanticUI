@@ -21,4 +21,72 @@ namespace Sidea.SemanticUI.Core
         BottomCenter = Bottom | Center,
         BottomRight = Bottom | Right,
     }
+
+    public static class PositionExtensions
+    {
+        public static string ToAlignmentClass(this Position position)
+        {
+            switch (position)
+            {
+                case Position.Left:
+                case Position.Right:
+                case Position.Center:
+                    return position.ToString().ToLower() + " aligned";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        public static string ToFloatedClass(this Position position)
+        {
+            switch (position)
+            {
+                case Position.Left:
+                case Position.Right:
+                    return position.ToString().ToLower() + " floated";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        public static string ToPositionClass(this Position position)
+        {
+            if (position.HasFlag(Position.Top))
+            {
+                return $"top {position.HorizontalPosition(ignoreCenter: false)}";
+            }
+
+            if (position.HasFlag(Position.Center))
+            {
+                return $"{position.HorizontalPosition(ignoreCenter: true)} center";
+            }
+
+            if (position.HasFlag(Position.Bottom))
+            {
+                return $"bottom {position.HorizontalPosition(ignoreCenter: false)}";
+            }
+
+            return string.Empty;
+        }
+
+        private static string HorizontalPosition(this Position position, bool ignoreCenter = false)
+        {
+            if (position.HasFlag(Position.Left))
+            {
+                return "left";
+            }
+
+            if (position.HasFlag(Position.Right))
+            {
+                return "right";
+            }
+
+            if (!ignoreCenter && position.HasFlag(Position.Center))
+            {
+                return "center";
+            }
+
+            return "right";
+        }
+    }
 }

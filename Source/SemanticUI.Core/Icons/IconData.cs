@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Sidea.SemanticUI.Core;
 
 namespace Sidea.SemanticUI.Core
 {
@@ -9,7 +8,7 @@ namespace Sidea.SemanticUI.Core
 
         public Size Size { get; set; }
 
-        public Color Color { get; set; } = Color.Default;
+        public Color Color { get; set; } = Color.NoColor;
 
         public bool Link { get; set; }
 
@@ -20,7 +19,7 @@ namespace Sidea.SemanticUI.Core
             yield return this.Name;
             yield return this.Size.ToClass();
             yield return this.Color.ToClass();
-            yield return this.Link.ToClassIf("link");
+            yield return "link".ToClassIf(this.Link);
         }
     }
 }

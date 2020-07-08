@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticUI.Blazor", "Semant
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{41B5ACD5-5FF9-444E-8E07-56A59044E586}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticUI.Blazor.Sample", "SemanticUI.Blazor.Sample\SemanticUI.Blazor.Sample.csproj", "{E57473B8-85A6-48EB-88F2-C6E7AAAD1C3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticUI.Blazor.Sample", "SemanticUI.Blazor.Sample\SemanticUI.Blazor.Sample.csproj", "{E57473B8-85A6-48EB-88F2-C6E7AAAD1C3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

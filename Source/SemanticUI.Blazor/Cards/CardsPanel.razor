@@ -1,0 +1,20 @@
+﻿@inherits SemanticComponent
+
+<div class="@Class()">
+    @ChildContent
+</div>
+
+@code {
+    public CardsPanel() : base("cards")
+    {
+    }
+
+    public Amount Count { get; set; }
+
+    public bool Stackable { get; set; }
+
+    protected override IEnumerable<string> Classes()
+    {
+        yield break;
+    }
+}

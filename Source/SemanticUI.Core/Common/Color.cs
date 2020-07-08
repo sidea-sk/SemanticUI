@@ -2,7 +2,7 @@
 {
     public enum Color
     {
-        Default,
+        NoColor,
         Red,
         Orange,
         Yellow,

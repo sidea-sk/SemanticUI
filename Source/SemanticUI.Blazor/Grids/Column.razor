@@ -1,0 +1,23 @@
+﻿@inherits SemanticComponent
+
+<div class="@Class()">
+    @ChildContent
+</div>
+
+@code {
+    public Column() : base("column", false)
+    {
+    }
+
+    [Parameter]
+    public Position Aligned { get; set; }
+
+    [Parameter]
+    public Amount Wide { get; set; }
+
+    protected override IEnumerable<string> Classes()
+    {
+        yield return this.Wide.ToClass("wide");
+        yield return this.Aligned.ToAlignmentClass();
+    }
+}

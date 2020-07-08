@@ -6,13 +6,13 @@ namespace Sidea.SemanticUI.Core
     public static class ClassTools
     {
         public static string ToClass(this IEnumerable<string> classes)
-            => string.Join(" ", classes.Where(c => !string.IsNullOrWhiteSpace(c)).ToArray());
+            => string.Join(" ", classes.Where(c => !string.IsNullOrWhiteSpace(c)));
 
-        public static string ToClassIf(this string @class, bool condition)
-            => condition ? @class : string.Empty;
+        public static string ToClassIf(this string @class, bool condition, string ifFalseClass = "")
+            => condition ? @class : ifFalseClass;
 
-        public static string ToClassIfNot(this string @class, bool condition)
-            => condition ? string.Empty : @class;
+        public static string ToClassIfNot(this string @class, bool condition, string ifTrueClass = "")
+            => condition ? ifTrueClass : @class;
 
         public static string ToClassIf(this bool value, string trueClass)
             => value.ToClass(trueClass, string.Empty);

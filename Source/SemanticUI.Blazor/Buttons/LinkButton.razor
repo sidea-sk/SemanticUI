@@ -1,0 +1,10 @@
+﻿@inherits ButtonBase
+
+<a href="@Href" class="@Class()" disabled="@Disabled">
+    @ChildContent
+</a>
+
+@code {
+    [Parameter]
+    public string Href { get; set; }
+}

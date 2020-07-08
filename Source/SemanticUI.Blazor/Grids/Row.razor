@@ -1,0 +1,19 @@
+﻿@inherits SemanticComponent
+
+<div class="@Class()">
+    @ChildContent
+</div>
+
+@code {
+    public Row(): base("row")
+    {
+    }
+
+    [Parameter]
+    public Amount Columns { get; set; }
+
+    protected override IEnumerable<string> Classes()
+    {
+        yield return this.Columns.ToClass("columns");
+    }
+}

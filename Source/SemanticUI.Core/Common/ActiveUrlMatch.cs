@@ -1,9 +1,8 @@
 ﻿namespace Sidea.SemanticUI.Core
 {
-    public enum Alignment
+    public enum ActiveUrlMatch
     {
         None,
-        Left,
-        Right
+        Exact
     }
 }

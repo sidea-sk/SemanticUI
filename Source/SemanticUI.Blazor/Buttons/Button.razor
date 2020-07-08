@@ -1,0 +1,20 @@
+﻿@inherits ButtonBase
+
+@using Microsoft.AspNetCore.Components.Web;
+
+<button class="@Class()"
+        type="@ButtonTypeAttribute()"
+        @onclick="OnClick"
+        disabled="@Disabled">
+    @ChildContent
+</button>
+
+@code {
+    [Parameter]
+    public ButtonType Type { get; set; } = ButtonType.Button;
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+    private string ButtonTypeAttribute() => this.Type.ToAttribute();
+}

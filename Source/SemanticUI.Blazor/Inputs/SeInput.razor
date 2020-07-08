@@ -1,0 +1,54 @@
+﻿@inherits SemanticComponent
+
+<div class="@Class()">
+    @Left
+
+    <input value="@Value"
+           @onchange="this.InputValueChanged"
+           type="text"
+           placeholder="@Placeholder"
+           readonly="@IsReadonly"
+           disabled="@IsDisabled" />
+
+    @Right
+</div>
+
+@code {
+    public SeInput() : base("input")
+    {
+    }
+
+    [Parameter]
+    public string Value { get; set; }
+
+    public Action<string> ValueChanged { get; set; }
+
+    [Parameter]
+    public string Placeholder { get; set; }
+
+    [Parameter]
+    public InputDecorations Decorations { get; set; }
+
+    [Parameter]
+    public EditState State { get; set; }
+
+    [Parameter]
+    public RenderFragment Left { get; set; }
+
+    [Parameter]
+    public RenderFragment Right { get; set; }
+
+    private bool IsReadonly => this.State == EditState.ReadOnly;
+    private bool IsDisabled => this.State == EditState.Disabled;
+
+    protected override IEnumerable<string> Classes()
+    {
+        yield return this.Decorations.ToClass();
+    }
+
+    private void InputValueChanged(ChangeEventArgs e)
+    {
+        this.Value = e.Value as string;
+        this.ValueChanged(this.Value);
+    }
+}
