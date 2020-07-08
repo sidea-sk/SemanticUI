@@ -1,0 +1,19 @@
+﻿@inherits SemanticComponent
+
+<div class="@Class()">
+    @ChildContent
+</div>
+
+@code {
+    public CardContent() : base("content", prefixUiClass: false)
+    {
+    }
+
+    [Parameter]
+    public bool Extra { get; set; }
+
+    protected override IEnumerable<string> Classes()
+    {
+        yield return "extra".ToClassIf(this.Extra);
+    }
+}
