@@ -18,6 +18,7 @@
   <ItemGroup>
     <Folder Include="Icons\" />
     <Folder Include="Messages\" />
+    <Folder Include="Grids\" />
   </ItemGroup>
 
 </Project>
