@@ -14,6 +14,9 @@ namespace Sidea.SemanticUI.Core
         public static string ToClassIfNot(this string @class, bool condition)
             => condition ? string.Empty : @class;
 
+        public static string ToClassIf(this string trueClass, bool condition, string falseClass = "")
+            => condition ? trueClass : falseClass;
+
         public static string ToClassIf(this bool value, string trueClass)
             => value.ToClass(trueClass, string.Empty);
 
