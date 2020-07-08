@@ -1,0 +1,10 @@
+﻿@inherits MenuItem
+
+<div class="@Class()">
+    @ChildContent
+
+    @if (HasRightIcon)
+    {
+        <i class="@RightIcon icon"></i>
+    }
+</div>

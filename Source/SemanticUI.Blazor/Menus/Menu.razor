@@ -1,0 +1,30 @@
+﻿@inherits SemanticComponent
+
+<div class="@Class()">
+    @ChildContent
+</div>
+
+@code {
+    public Menu() : base("menu")
+    {
+    }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public Orientation Orientation { get; set; } = Horizontal;
+
+    [Parameter]
+    public Position Alignment { get; set; } = Left;
+
+    [Parameter]
+    public bool Pointing { get; set; }
+
+    protected override IEnumerable<string> Classes()
+    {
+        yield return this.Orientation.ToClass();
+        yield return "pointing".ToClassIf(this.Pointing);
+        yield return this.Alignment.ToAlignmentClass();
+    }
+}
