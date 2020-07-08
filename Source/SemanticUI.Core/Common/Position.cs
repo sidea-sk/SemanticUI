@@ -1,5 +1,7 @@
 ﻿using System;
 
+using static Sidea.SemanticUI.Core.Position;
+
 namespace Sidea.SemanticUI.Core
 {
     [Flags]
@@ -28,9 +30,9 @@ namespace Sidea.SemanticUI.Core
         {
             switch (position)
             {
-                case Position.Left:
-                case Position.Right:
-                case Position.Center:
+                case Left:
+                case Right:
+                case Center:
                     return position.ToString().ToLower() + " aligned";
                 default:
                     return string.Empty;
@@ -69,6 +71,28 @@ namespace Sidea.SemanticUI.Core
             return string.Empty;
         }
 
+        public static string ToAttachedClass(this Position position)
+        {
+            var @class = string.Empty;
+            if (position.HasFlag(Top))
+            {
+                @class += "top" + position.AttachedHorizontal();
+            }
+            else if (position.HasFlag(Bottom))
+            {
+                @class += "bottom" + position.AttachedHorizontal();
+            }
+
+            return @class;
+        }
+
+        public static string ToLabelClass(this Position position)
+        {
+            return position.HasFlag(Right)
+                ? "right"
+                : string.Empty;
+        }
+
         private static string HorizontalPosition(this Position position, bool ignoreCenter = false)
         {
             if (position.HasFlag(Position.Left))
@@ -87,6 +111,21 @@ namespace Sidea.SemanticUI.Core
             }
 
             return "right";
+        }
+
+        private static string AttachedHorizontal(this Position position)
+        {
+            if (position.HasFlag(Left))
+            {
+                return " left";
+            }
+
+            if (position.HasFlag(Right))
+            {
+                return " right";
+            }
+
+            return string.Empty;
         }
     }
 }

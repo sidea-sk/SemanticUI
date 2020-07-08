@@ -1,0 +1,12 @@
+﻿@inherits LabelBase
+@namespace Sidea.SemanticUI.Blazor
+
+<div class="@Class()">
+    @ChildContent
+</div>
+
+@code {
+    public LabelsGroup(): base("labels")
+    {
+    }
+}
