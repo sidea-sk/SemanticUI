@@ -1,4 +1,6 @@
-﻿namespace Sidea.SemanticUI.Core
+﻿using static Sidea.SemanticUI.Core.Position;
+
+namespace Sidea.SemanticUI.Core
 {
     public static class CommonExtensions
     {
@@ -37,14 +39,6 @@
                 : orientation.ToString().ToLower();
         }
 
-        // rename ToAlignmentClass(), ToFloatedClass(), ToPostionClass(), ...
-        public static string ToClass(this Alignment alignment, string alignmentName = "aligned")
-        {
-            return alignment == Alignment.None
-                ? string.Empty
-                : alignment.ToString().ToLower() + " " + alignmentName;
-        }
-
         public static string ToClass(this Amount count, string of)
         {
             return count == Amount.Undefined
@@ -52,7 +46,31 @@
                 : count.ToString().ToLower() + " " + of;
         }
 
-        public static string ToClass(this Position position)
+        public static string ToAlignmentClass(this Position position)
+        {
+            switch (position)
+            {
+                case Left:
+                case Right:
+                    return position.ToString().ToLower() + " aligned";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        public static string ToFloatedClass(this Position position)
+        {
+            switch (position)
+            {
+                case Left:
+                case Right:
+                    return position.ToString().ToLower() + " floated";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        public static string ToPositionClass(this Position position)
         {
             if(position.HasFlag(Position.Top))
             {

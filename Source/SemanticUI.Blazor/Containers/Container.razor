@@ -17,11 +17,11 @@
     public bool Fluid { get; set; }
 
     [Parameter]
-    public Alignment Alignment { get; set; } = None;
+    public Position Alignment { get; set; } = Position.Default;
 
     protected override IEnumerable<string> Classes()
     {
-        yield return this.Alignment.ToClass();
+        yield return this.Alignment.ToAlignmentClass();
         yield return this.Fluid.ToClassIf("fluid");
     }
 }

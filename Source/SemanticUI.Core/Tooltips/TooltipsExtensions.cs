@@ -11,7 +11,7 @@ namespace Sidea.SemanticUI.Core
                 return;
             }
             tooltip.Content.SetAsAttribute("data-tooltip", attributes);
-            tooltip.Position.ToClass().SetAsAttribute("data-position", attributes);
+            tooltip.Position.ToPositionClass().SetAsAttribute("data-position", attributes);
 
             if (tooltip.InvertedTooltip)
             {
