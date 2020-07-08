@@ -1,4 +1,4 @@
-﻿namespace Sidea.SemanticUI.Semantic.Core
+﻿namespace Sidea.SemanticUI.Core
 {
     public static class ButtonsExtensions
     {
