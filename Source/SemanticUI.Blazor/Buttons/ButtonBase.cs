@@ -11,7 +11,7 @@ namespace Sidea.SemanticUI.Blazor
         }
 
         [Parameter]
-        public bool IsBusy { get; set; }
+        public ButtonState ButtonState { get; set; }
 
         [Parameter]
         public Color Color { get; set; }
@@ -20,7 +20,7 @@ namespace Sidea.SemanticUI.Blazor
         public Size Size { get; set; }
 
         [Parameter]
-        public bool Basic { get; set; } = false;
+        public ButtonDecoration Decoration { get; set; }
 
         [Parameter]
         public bool Fluid { get; set; } = false;
@@ -28,23 +28,18 @@ namespace Sidea.SemanticUI.Blazor
         [Parameter]
         public Emphasizes Emphasizes { get; set; }
 
-        [Parameter]
-        public bool Icon { get; set; } = true;
-
-        [Parameter]
-        public bool Enabled { get; set; } = true;
-
-        public bool Disabled => !this.Enabled;
+        public bool Disabled => this.ButtonState != ButtonState.Enabled && this.ButtonState != ButtonState.Active;
 
         protected override IEnumerable<string> Classes()
         {
-            yield return "icon".ToClassIf(this.Icon);
+            yield return this.Decoration.ToClass();
+            // yield return "icon".ToClassIf(this.Icon);
             yield return "fluid".ToClassIf(this.Fluid);
             yield return this.Color.ToClass();
             yield return this.Size.ToClass();
-            yield return "basic".ToClassIf(this.Basic);
+            // yield return "basic".ToClassIf(this.Basic);
             yield return this.Emphasizes.ToClass();
-            yield return "sync loading".ToClassIf(this.IsBusy);
+            // yield return "sync loading".ToClassIf(this.IsBusy);
         }
     }
 }
