@@ -1,4 +1,5 @@
 ﻿@inherits SemanticComponent
+@namespace Sidea.SemanticUI.Blazor
 
 <div class="@Class()">
     @ChildContent
@@ -15,9 +16,13 @@
     [Parameter]
     public ButtonDecoration Decoration { get; set; } = ButtonDecoration.NoDecoration;
 
+    [Parameter]
+    public Amount Amount { get; set; }
+
     protected override IEnumerable<string> Classes()
     {
         yield return this.Orientation.ToClass();
         yield return this.Decoration.ToClass();
+        yield return this.Amount.ToClass(of: "");
     }
 }
