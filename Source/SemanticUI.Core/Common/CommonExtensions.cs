@@ -22,19 +22,5 @@
                 ? string.Empty
                 : severity.ToString().ToLower();
         }
-
-        public static string ToClass(this Emphasizes emphasizes)
-        {
-            return emphasizes == Emphasizes.NoEmphasizes
-                ? string.Empty
-                : emphasizes.ToString().ToLower();
-        }
-
-        public static string ToClass(this Orientation orientation, Orientation emptyIf = Orientation.Horizontal)
-        {
-            return orientation == emptyIf
-                ? string.Empty
-                : orientation.ToString().ToLower();
-        }
     }
 }

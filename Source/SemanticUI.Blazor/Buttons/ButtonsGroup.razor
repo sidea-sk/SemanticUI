@@ -1,0 +1,23 @@
+﻿@inherits SemanticComponent
+
+<div class="@Class()">
+    @ChildContent
+</div>
+
+@code {
+    public ButtonsGroup() : base("buttons")
+    {
+    }
+
+    [Parameter]
+    public Orientation Orientation { get; set; } = Orientation.Horizontal;
+
+    [Parameter]
+    public ButtonDecoration Decoration { get; set; } = ButtonDecoration.NoDecoration;
+
+    protected override IEnumerable<string> Classes()
+    {
+        yield return this.Orientation.ToClass();
+        yield return this.Decoration.ToClass();
+    }
+}
