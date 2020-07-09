@@ -1,4 +1,5 @@
-﻿@inherits SemanticComponent
+﻿@inherits InputComponent
+@namespace Sidea.SemanticUI.Blazor
 
 <div class="@Class()">
     <input type="@HtmlType" checked="@Checked">
@@ -20,14 +21,16 @@
     public string Label { get; set; }
 
     [Parameter]
-    public EditState State { get; set; }
-    
-    [Parameter]
     public bool Fitted { get; set; }
 
     private string HtmlType => this.Type == CheckboxType.Radio ? "radion" : "checkbox";
 
     protected override IEnumerable<string> Classes()
+    {
+        return base.Classes().Concat(this.ClassesPrivate());
+    }
+
+    protected IEnumerable<string> ClassesPrivate()
     {
         yield return this.State.ToClass();
         yield return "fitted".ToClassIf(this.Fitted);

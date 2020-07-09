@@ -1,11 +1,12 @@
 ﻿@inherits SemanticComponent
+@namespace Sidea.SemanticUI.Blazor
 
 <div class="@Class()">
     @ChildContent
 </div>
 
 @code {
-    public CardMeta(): base("meta", prefixUiClass: false)
+    public CardMeta() : base("meta", prefixUiClass: false)
     {
     }
 

@@ -1,11 +1,12 @@
 ﻿@inherits SemanticComponent
+@namespace Sidea.SemanticUI.Blazor
 
 <div class="@Class()" @attributes="@Attributes()">
     @ChildContent
 </div>
 
 @code {
-    public Field(): base("field", prefixUiClass: false)
+    public Field() : base("field", prefixUiClass: false)
     {
     }
 

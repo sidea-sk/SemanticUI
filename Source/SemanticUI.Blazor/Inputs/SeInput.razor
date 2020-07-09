@@ -1,4 +1,5 @@
-﻿@inherits SemanticComponent
+﻿@inherits InputComponent
+@namespace Sidea.SemanticUI.Blazor
 
 <div class="@Class()">
     @Left
@@ -30,9 +31,6 @@
     public InputDecorations Decorations { get; set; }
 
     [Parameter]
-    public EditState State { get; set; }
-
-    [Parameter]
     public RenderFragment Left { get; set; }
 
     [Parameter]
@@ -43,12 +41,17 @@
 
     protected override IEnumerable<string> Classes()
     {
-        yield return this.Decorations.ToClass();
+        return base.Classes().Concat(this.ClassesPrivate());
     }
 
     private void InputValueChanged(ChangeEventArgs e)
     {
         this.Value = e.Value as string;
         this.ValueChanged(this.Value);
+    }
+
+    private IEnumerable<string> ClassesPrivate()
+    {
+        yield return this.Decorations.ToClass();
     }
 }

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Sidea.SemanticUI.Core;
 
-namespace Sidea.SemanticUI.Blazor.Menus
+namespace Sidea.SemanticUI.Blazor
 {
     public abstract class MenuItem : SemanticComponent
     {
