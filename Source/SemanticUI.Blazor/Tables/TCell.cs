@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Components;
 using Sidea.SemanticUI.Core;
 
-namespace Sidea.SemanticUI.Blazor.Tables
+namespace Sidea.SemanticUI.Blazor
 {
     public class TCell : TRowCell
     {
