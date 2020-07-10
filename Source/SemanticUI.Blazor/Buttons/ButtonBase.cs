@@ -55,12 +55,28 @@ namespace Sidea.SemanticUI.Blazor
             set => _data.Fluid = value;
         }
 
+        [Parameter]
+        public Position Floated
+        {
+            get => _data.Floated;
+            set => _data.Floated = value;
+        }
+
+        [Parameter]
+        public Position Attached
+        {
+            get => _data.Attached;
+            set => _data.Attached = value;
+        }
+
         protected override IEnumerable<string> Classes()
         {
             yield return this.Decoration.ToClass();
             yield return "fluid".ToClassIf(this.Fluid);
             yield return this.Color.ToClass();
             yield return this.Size.ToClass();
+            yield return this.Floated.ToFloatedClass();
+            yield return this.Attached.ToAttachedClass();
         }
     }
 }
