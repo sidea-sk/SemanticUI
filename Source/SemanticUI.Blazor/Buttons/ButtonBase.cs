@@ -1,45 +1,82 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Components;
 using Sidea.SemanticUI.Core;
 
 namespace Sidea.SemanticUI.Blazor
 {
-    public abstract class ButtonBase : SemanticComponent
+    public abstract class ButtonBase<T> : SemanticComponent
+        where T: ButtonBaseData
     {
-        public ButtonBase() : base(cssName: "button")
+        public ButtonBase(string cssName) : base(cssName)
         {
         }
 
-        [Parameter]
-        public ButtonState ButtonState { get; set; }
+        private T _data = Activator.CreateInstance<T>();
 
         [Parameter]
-        public Color Color { get; set; }
+        public T Data
+        {
+            get => _data;
+            set => _data = value ?? Activator.CreateInstance<T>();
+        }
 
         [Parameter]
-        public Size Size { get; set; }
+        public bool IsVisible
+        {
+            get => _data.IsVisible;
+            set => _data.IsVisible = value;
+        }
 
         [Parameter]
-        public ButtonDecoration Decoration { get; set; }
+        public Color Color
+        {
+            get => _data.Color;
+            set => _data.Color = value;
+        }
 
         [Parameter]
-        public bool Fluid { get; set; } = false;
+        public Size Size {
+            get => _data.Size;
+            set => _data.Size = value;
+        }
 
         [Parameter]
-        public Emphasizes Emphasizes { get; set; }
+        public ButtonDecoration Decoration
+        {
+            get => _data.Decoration;
+            set => _data.Decoration = value;
+        }
 
-        public bool Disabled => this.ButtonState != ButtonState.Enabled && this.ButtonState != ButtonState.Active;
+        [Parameter]
+        public bool Fluid
+        {
+            get => _data.Fluid;
+            set => _data.Fluid = value;
+        }
+
+        [Parameter]
+        public Position Floated
+        {
+            get => _data.Floated;
+            set => _data.Floated = value;
+        }
+
+        [Parameter]
+        public Position Attached
+        {
+            get => _data.Attached;
+            set => _data.Attached = value;
+        }
 
         protected override IEnumerable<string> Classes()
         {
             yield return this.Decoration.ToClass();
-            // yield return "icon".ToClassIf(this.Icon);
             yield return "fluid".ToClassIf(this.Fluid);
             yield return this.Color.ToClass();
             yield return this.Size.ToClass();
-            // yield return "basic".ToClassIf(this.Basic);
-            yield return this.Emphasizes.ToClass();
-            // yield return "sync loading".ToClassIf(this.IsBusy);
+            yield return this.Floated.ToFloatedClass();
+            yield return this.Attached.ToAttachedClass();
         }
     }
 }

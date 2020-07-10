@@ -1,14 +1,19 @@
-﻿@inherits ButtonBase
+﻿@inherits SingleButtonBase
+
 @namespace Sidea.SemanticUI.Blazor
 
 @using Microsoft.AspNetCore.Components.Web;
 
-<button class="@Class()"
-        type="@ButtonTypeAttribute()"
-        @onclick="OnClick"
-        disabled="@Disabled">
-    @ChildContent
-</button>
+@if (this.IsVisible)
+{
+    <button type="@ButtonTypeAttribute()"
+            class="@Class()"
+            disabled="@Disabled"
+            @onclick="OnClick">
+
+        @ChildContent
+    </button>
+}
 
 @code {
     [Parameter]

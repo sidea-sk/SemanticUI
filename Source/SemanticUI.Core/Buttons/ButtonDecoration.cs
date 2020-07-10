@@ -13,6 +13,7 @@ namespace Sidea.SemanticUI.Core
         Icon         = 1 << 3,
         Labeled      = 1 << 4,
         Inverted     = 1 << 5,
+        // Doesnt work for group
         Circular     = 1 << 6
     }
 

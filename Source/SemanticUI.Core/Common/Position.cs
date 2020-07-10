@@ -43,8 +43,7 @@ namespace Sidea.SemanticUI.Core
         {
             switch (position)
             {
-                case Position.Left:
-                case Position.Right:
+                case Right:
                     return position.ToString().ToLower() + " floated";
                 default:
                     return string.Empty;
@@ -53,17 +52,17 @@ namespace Sidea.SemanticUI.Core
 
         public static string ToPositionClass(this Position position)
         {
-            if (position.HasFlag(Position.Top))
+            if (position.HasFlag(Top))
             {
                 return $"top {position.HorizontalPosition(ignoreCenter: false)}";
             }
 
-            if (position.HasFlag(Position.Center))
+            if (position.HasFlag(Center))
             {
                 return $"{position.HorizontalPosition(ignoreCenter: true)} center";
             }
 
-            if (position.HasFlag(Position.Bottom))
+            if (position.HasFlag(Bottom))
             {
                 return $"bottom {position.HorizontalPosition(ignoreCenter: false)}";
             }
@@ -95,17 +94,17 @@ namespace Sidea.SemanticUI.Core
 
         private static string HorizontalPosition(this Position position, bool ignoreCenter = false)
         {
-            if (position.HasFlag(Position.Left))
+            if (position.HasFlag(Left))
             {
                 return "left";
             }
 
-            if (position.HasFlag(Position.Right))
+            if (position.HasFlag(Right))
             {
                 return "right";
             }
 
-            if (!ignoreCenter && position.HasFlag(Position.Center))
+            if (!ignoreCenter && position.HasFlag(Center))
             {
                 return "center";
             }
