@@ -1,4 +1,4 @@
-﻿@inherits SemanticComponent
+﻿@inherits ButtonBase<ButtonsGroupData>
 @namespace Sidea.SemanticUI.Blazor
 
 <div class="@Class()">
@@ -11,18 +11,27 @@
     }
 
     [Parameter]
-    public Orientation Orientation { get; set; } = Orientation.Horizontal;
+    public Orientation Orientation
+    {
+        get => this.Data.Orientation;
+        set => this.Data.Orientation = value;
+    }
 
     [Parameter]
-    public ButtonDecoration Decoration { get; set; } = ButtonDecoration.NoDecoration;
-
-    [Parameter]
-    public Amount Amount { get; set; }
+    public Amount Amount
+    {
+        get => this.Data.Amount;
+        set => this.Data.Amount = value;
+    }
 
     protected override IEnumerable<string> Classes()
     {
-        yield return this.Orientation.ToClass();
-        yield return this.Decoration.ToClass();
-        yield return this.Amount.ToClass(of: "");
+        return base.Classes()
+            .Concat(
+                new[] {
+                    this.Orientation.ToClass(),
+                    this.Amount.ToClass(of: "")
+                });
+
     }
 }

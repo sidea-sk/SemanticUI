@@ -1,45 +1,59 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Components;
 using Sidea.SemanticUI.Core;
 
 namespace Sidea.SemanticUI.Blazor
 {
-    public abstract class ButtonBase : SemanticComponent
+    public abstract class ButtonBase<T> : SemanticComponent
+        where T: ButtonBaseData
     {
-        public ButtonBase() : base(cssName: "button")
+        public ButtonBase(string cssName) : base(cssName)
         {
         }
 
-        [Parameter]
-        public ButtonState ButtonState { get; set; }
+        private T _data = Activator.CreateInstance<T>();
 
         [Parameter]
-        public Color Color { get; set; }
+        public T Data
+        {
+            get => _data;
+            set => _data = value ?? Activator.CreateInstance<T>();
+        }
 
         [Parameter]
-        public Size Size { get; set; }
+        public Color Color
+        {
+            get => _data.Color;
+            set => _data.Color = value;
+        }
 
         [Parameter]
-        public ButtonDecoration Decoration { get; set; }
+        public Size Size {
+            get => _data.Size;
+            set => _data.Size = value;
+        }
 
         [Parameter]
-        public bool Fluid { get; set; } = false;
+        public ButtonDecoration Decoration
+        {
+            get => _data.Decoration;
+            set => _data.Decoration = value;
+        }
 
         [Parameter]
-        public Emphasizes Emphasizes { get; set; }
-
-        public bool Disabled => this.ButtonState != ButtonState.Enabled && this.ButtonState != ButtonState.Active;
+        public bool Fluid
+        {
+            get => _data.Fluid;
+            set => _data.Fluid = value;
+        }
 
         protected override IEnumerable<string> Classes()
         {
             yield return this.Decoration.ToClass();
-            // yield return "icon".ToClassIf(this.Icon);
             yield return "fluid".ToClassIf(this.Fluid);
             yield return this.Color.ToClass();
             yield return this.Size.ToClass();
-            // yield return "basic".ToClassIf(this.Basic);
-            yield return this.Emphasizes.ToClass();
-            // yield return "sync loading".ToClassIf(this.IsBusy);
         }
     }
 }

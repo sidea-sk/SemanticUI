@@ -1,11 +1,18 @@
-﻿@inherits ButtonBase
+﻿@inherits SingleButtonBase
 @namespace Sidea.SemanticUI.Blazor
 
-<a href="@Href" class="@Class()" disabled="@Disabled">
+<a href="@Href"
+   target="@Target"
+   class="@Class()"
+   disabled="@Disabled">
+
     @ChildContent
 </a>
 
 @code {
     [Parameter]
     public string Href { get; set; }
+
+    [Parameter]
+    public string Target { get; set; }
 }
