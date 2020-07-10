@@ -12,18 +12,26 @@ namespace Sidea.SemanticUI.Blazor
         }
 
         [Parameter]
-        public ButtonState ButtonState { get; set; }
+        public ButtonState State
+        {
+            get => this.Data.State;
+            set => this.Data.State = value;
+        }
 
         [Parameter]
-        public Emphasizes Emphasizes { get; set; }
+        public Emphasizes Emphasizes
+        {
+            get => this.Data.Emphasizes;
+            set => this.Data.Emphasizes = value;
+        }
 
-        public bool Disabled => this.ButtonState != ButtonState.Enabled && this.ButtonState != ButtonState.Active;
+        public bool Disabled => this.State != ButtonState.Enabled && this.State != ButtonState.Active;
 
         protected override IEnumerable<string> Classes()
         {
             return base.Classes()
                 .Concat(new[] {
-                    this.ButtonState.ToClass(),
+                    this.State.ToClass(),
                     this.Emphasizes.ToClass()
                 });
         }

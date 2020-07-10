@@ -2,7 +2,7 @@
 {
     public class SingleButtonData : ButtonBaseData
     {
-        public ButtonState ButtonState { get; set; }
+        public ButtonState State { get; set; }
 
         public Emphasizes Emphasizes { get; set; }
     }
