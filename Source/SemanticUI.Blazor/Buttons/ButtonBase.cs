@@ -22,6 +22,13 @@ namespace Sidea.SemanticUI.Blazor
         }
 
         [Parameter]
+        public bool IsVisible
+        {
+            get => _data.IsVisible;
+            set => _data.IsVisible = value;
+        }
+
+        [Parameter]
         public Color Color
         {
             get => _data.Color;

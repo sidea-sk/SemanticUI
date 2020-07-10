@@ -4,13 +4,16 @@
 
 @using Microsoft.AspNetCore.Components.Web;
 
-<button type="@ButtonTypeAttribute()"
-        class="@Class()"
-        disabled="@Disabled"
-        @onclick="OnClick">
+@if (this.IsVisible)
+{
+    <button type="@ButtonTypeAttribute()"
+            class="@Class()"
+            disabled="@Disabled"
+            @onclick="OnClick">
 
-    @ChildContent
-</button>
+        @ChildContent
+    </button>
+}
 
 @code {
     [Parameter]

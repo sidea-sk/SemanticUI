@@ -8,6 +8,8 @@
 
         public ButtonDecoration Decoration { get; set; }
 
+        public bool IsVisible { get; set; } = true;
+
         public bool Fluid { get; set; } = false;
     }
 }

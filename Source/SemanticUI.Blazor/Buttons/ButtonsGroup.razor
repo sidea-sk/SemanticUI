@@ -1,9 +1,12 @@
 ﻿@inherits ButtonBase<ButtonsGroupData>
 @namespace Sidea.SemanticUI.Blazor
 
-<div class="@Class()">
-    @ChildContent
-</div>
+@if (this.IsVisible)
+{
+    <div class="@Class()">
+        @ChildContent
+    </div>
+}
 
 @code {
     public ButtonsGroup() : base("buttons")

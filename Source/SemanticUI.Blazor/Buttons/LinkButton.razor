@@ -1,13 +1,16 @@
 ﻿@inherits SingleButtonBase
 @namespace Sidea.SemanticUI.Blazor
 
-<a href="@Href"
-   target="@Target"
-   class="@Class()"
-   disabled="@Disabled">
+@if (this.IsVisible)
+{
+    <a href="@Href"
+       target="@Target"
+       class="@Class()"
+       disabled="@Disabled">
 
-    @ChildContent
-</a>
+        @ChildContent
+    </a>
+}
 
 @code {
     [Parameter]
