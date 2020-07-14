@@ -19,6 +19,9 @@ namespace Sidea.SemanticUI.Blazor
         [Parameter]
         public int CellSpan { get; set; }
 
+        [Parameter]
+        public Amount Wide { get; set; }
+
         protected override IEnumerable<string> Classes()
         {
             return base.Classes()
@@ -42,6 +45,7 @@ namespace Sidea.SemanticUI.Blazor
         {
             yield return "collapsing".ToClassIf(this.Collapsing);
             yield return this.Alignment.ToAlignmentClass();
+            yield return this.Wide.ToClass("wide");
         }
     }
 }
