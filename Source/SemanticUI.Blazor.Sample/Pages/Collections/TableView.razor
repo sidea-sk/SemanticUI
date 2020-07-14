@@ -58,6 +58,41 @@
     </Table>
 </Example>
 
+<Example Header="Column Width"
+         Text="A table can specify the width of individual columns independently.">
+    <Message Severity="Info"
+             Content="Tables use a 16 column grid similar to ui grid">
+
+    </Message>
+    <Table>
+        <THead>
+            <Tr>
+                <Th Wide="Ten">Name</Th>
+                <Th Wide="Six">Status</Th>
+            </Tr>
+        </THead>
+        <TBody>
+            <Tr>
+                <Td>John</Td>
+                <Td>Approved</Td>
+            </Tr>
+            <Tr>
+                <Td>Jamie</Td>
+                <Td>Approved</Td>
+            </Tr>
+            <Tr>
+                <Td>Jill</Td>
+                <Td>Denied</Td>
+            </Tr>
+        </TBody>
+        <TFoot>
+            <Tr>
+                <Th>3 People</Th>
+                <Th>2 Approved</Th>
+            </Tr>
+        </TFoot>
+    </Table>
+</Example>
 @code {
 
 }

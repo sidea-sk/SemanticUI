@@ -8,21 +8,21 @@ namespace Sidea.SemanticUI.Core
     [Flags]
     public enum TableParameters
     {
-        DefaultProperties,
-        Basic,
-        VeryBasic,  // use either Basic or VeryBasic
-        Celled,
-        Collapsing,
-        Compact,
-        Definition,
-        Fixed,
-        Inverted,
-        Padded,
-        VeryPadded, // use either Padded or VeryPadded
-        SingleLine,
-        SelectableRow,
-        Striped,
-        Structured
+        DefaultProperties = 0,
+        Basic             = 1 << 0,
+        VeryBasic         = 1 << 1,  // use either Basic or VeryBasic
+        Celled            = 1 << 2,
+        Collapsing        = 1 << 3,
+        Compact           = 1 << 4,
+        Definition        = 1 << 5,
+        Fixed             = 1 << 6,
+        Inverted          = 1 << 7,
+        Padded            = 1 << 8,
+        VeryPadded        = 1 << 9, // use either Padded or VeryPadded
+        SingleLine        = 1 << 10,
+        SelectableRow     = 1 << 11,
+        Striped           = 1 << 12,
+        Structured        = 1 << 13
     }
 
     public static class TableParametersExtensions
