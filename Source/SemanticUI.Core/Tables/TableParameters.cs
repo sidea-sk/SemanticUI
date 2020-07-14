@@ -48,6 +48,8 @@ namespace Sidea.SemanticUI.Core
         {
             return value switch
             {
+                VeryBasic => "very basic",
+                VeryPadded => "very padded",
                 SingleLine => "single line",
                 SelectableRow => "selectable",
                 _ => value.ToString().ToLower(),

@@ -1,0 +1,17 @@
+﻿<Segment>
+    <Description Header="@Header"
+                 Text="@Text" />
+
+    @ChildContent
+</Segment>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string Header { get; set; }
+
+    [Parameter]
+    public string Text { get; set; }
+}
