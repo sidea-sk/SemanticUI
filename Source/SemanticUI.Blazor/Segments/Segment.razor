@@ -35,10 +35,14 @@
     public bool Placeholder { get; set; }
 
     [Parameter]
+    public bool Blurred { get; set; }
+
+    [Parameter]
     public Orientation Orientation { get; set; } = Horizontal;
 
     protected override IEnumerable<string> Classes()
     {
+        yield return "blurring dimmable dimmed".ToClassIf(this.Blurred);
         yield return "placeholder".ToClassIf(this.Placeholder);
         yield return "compact".ToClassIf(this.Compact);
         yield return this.Color.ToClass();

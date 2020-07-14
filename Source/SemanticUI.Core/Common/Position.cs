@@ -39,6 +39,18 @@ namespace Sidea.SemanticUI.Core
             }
         }
 
+        public static string ToVerticalAlignmentClass(this Position position)
+        {
+            switch (position)
+            {
+                case Top:
+                case Bottom:
+                    return position.ToString().ToLower() + " aligned";
+                default:
+                    return string.Empty;
+            }
+        }
+
         public static string ToFloatedClass(this Position position)
         {
             switch (position)
