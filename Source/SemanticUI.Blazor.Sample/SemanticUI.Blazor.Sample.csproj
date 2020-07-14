@@ -8,4 +8,8 @@
     <ProjectReference Include="..\SemanticUI.Blazor\SemanticUI.Blazor.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Modules\" />
+  </ItemGroup>
+
 </Project>
