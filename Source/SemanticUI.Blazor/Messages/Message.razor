@@ -38,7 +38,7 @@
 
     @if (this.CanClose)
     {
-        <Icon Name="close" />
+        <Icon Name="close" @onclick="OnCloseIconClick" />
     }
 </div>
 
@@ -125,6 +125,8 @@
 
     [Parameter]
     public EventCallback<MouseEventArgs> OnMessageClick { get; set; }
+
+    public EventCallback<MouseEventArgs> OnCloseIconClick { get; set; }
 
     protected override IEnumerable<string> Classes()
     {
