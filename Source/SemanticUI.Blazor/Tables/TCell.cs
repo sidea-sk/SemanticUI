@@ -17,7 +17,7 @@ namespace Sidea.SemanticUI.Blazor
         public int RowSpan { get; set; }
 
         [Parameter]
-        public int CellSpan { get; set; }
+        public int ColSpan { get; set; }
 
         [Parameter]
         public Amount Wide { get; set; }
@@ -35,9 +35,9 @@ namespace Sidea.SemanticUI.Blazor
                 attributes.Add("rowspan", this.RowSpan);
             }
 
-            if (this.CellSpan > 1)
+            if (this.ColSpan > 1)
             {
-                attributes.Add("cellspan", this.RowSpan);
+                attributes.Add("colspan", this.RowSpan);
             }
         }
 
