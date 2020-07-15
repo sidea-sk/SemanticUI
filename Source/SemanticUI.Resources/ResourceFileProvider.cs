@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Primitives;
 
-namespace Sidea.SemanticUI.Core
+namespace Sidea.SemanticUI.Resources
 {
-    public class CssFileProvider : IFileProvider
+    public class ResourceFileProvider : IFileProvider
     {
-        private const string _assemblyPath = "css/semantic-ui";
-        private ManifestEmbeddedFileProvider _provider = new ManifestEmbeddedFileProvider(typeof(CssFileProvider).Assembly);
+        private const string _assemblyPath = "semantic";
+        private ManifestEmbeddedFileProvider _provider = new ManifestEmbeddedFileProvider(typeof(ResourceFileProvider).Assembly);
 
         public IDirectoryContents GetDirectoryContents(string subpath)
         {

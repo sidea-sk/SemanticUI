@@ -27,7 +27,7 @@ namespace SemanticUI.Blazor.Sample
             app.UseStaticFiles(new StaticFileOptions
             {
                 RequestPath = "/sidea-core/semantic-ui", // the request path must correspond with <link rel="stylesheet" href="/sidea-core/semantic-ui/semantic.min.css" />
-                FileProvider = new Sidea.SemanticUI.Core.CssFileProvider()
+                FileProvider = new Sidea.SemanticUI.Resources.ResourceFileProvider()
             });
 
             app.UseRouting();

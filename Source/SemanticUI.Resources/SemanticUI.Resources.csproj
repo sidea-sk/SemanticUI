@@ -1,0 +1,125 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>Sidea.SemanticUI.Resources</AssemblyName>
+        <RootNamespace>Sidea.SemanticUI.Resources</RootNamespace>
+        <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+        <Version>1.0.0</Version>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="3.1.6" />
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.1.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+    <None Remove="semantic\semantic.css" />
+    <None Remove="semantic\semantic.js" />
+    <None Remove="semantic\semantic.min.css" />
+    <None Remove="semantic\semantic.min.js" />
+    <None Remove="semantic\themes\default\assets\fonts\brand-icons.eot" />
+    <None Remove="semantic\themes\default\assets\fonts\brand-icons.svg" />
+    <None Remove="semantic\themes\default\assets\fonts\brand-icons.ttf" />
+    <None Remove="semantic\themes\default\assets\fonts\brand-icons.woff" />
+    <None Remove="semantic\themes\default\assets\fonts\brand-icons.woff2" />
+    <None Remove="semantic\themes\default\assets\fonts\icons.eot" />
+    <None Remove="semantic\themes\default\assets\fonts\icons.otf" />
+    <None Remove="semantic\themes\default\assets\fonts\icons.svg" />
+    <None Remove="semantic\themes\default\assets\fonts\icons.ttf" />
+    <None Remove="semantic\themes\default\assets\fonts\icons.woff" />
+    <None Remove="semantic\themes\default\assets\fonts\icons.woff2" />
+    <None Remove="semantic\themes\default\assets\fonts\outline-icons.eot" />
+    <None Remove="semantic\themes\default\assets\fonts\outline-icons.svg" />
+    <None Remove="semantic\themes\default\assets\fonts\outline-icons.ttf" />
+    <None Remove="semantic\themes\default\assets\fonts\outline-icons.woff" />
+    <None Remove="semantic\themes\default\assets\fonts\outline-icons.woff2" />
+    <None Remove="semantic\themes\default\assets\images\flags.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="semantic\semantic.css" />
+    <EmbeddedResource Include="semantic\semantic.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\semantic.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\semantic.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\brand-icons.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\brand-icons.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\brand-icons.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\brand-icons.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\brand-icons.woff2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\icons.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\icons.otf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\icons.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\icons.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\icons.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\icons.woff2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\outline-icons.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\outline-icons.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\outline-icons.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\outline-icons.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\fonts\outline-icons.woff2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="semantic\themes\default\assets\images\flags.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
