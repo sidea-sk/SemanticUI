@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SemanticUI.Blazor\SemanticUI.Blazor.csproj" />
+    <ProjectReference Include="..\SemanticUI.Resources\SemanticUI.Resources.csproj" />
   </ItemGroup>
 
   <ItemGroup>
