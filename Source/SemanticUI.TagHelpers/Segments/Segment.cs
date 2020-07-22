@@ -5,9 +5,9 @@ using Sidea.SemanticUI.Core;
 namespace Sidea.SemanticUI.TagHelpers
 {
     [HtmlTargetElement("sui-segment")]
-    public class SegmentTagHelper : SemanticTagHelper
+    public class Segment : SemanticTagHelper
     {
-        public SegmentTagHelper() : base("segment", "div")
+        public Segment() : base("segment", "div")
         {
         }
 
