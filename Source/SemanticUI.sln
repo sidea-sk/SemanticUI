@@ -11,7 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{41B5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticUI.Blazor.Sample", "SemanticUI.Blazor.Sample\SemanticUI.Blazor.Sample.csproj", "{E57473B8-85A6-48EB-88F2-C6E7AAAD1C3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticUI.Resources", "SemanticUI.Resources\SemanticUI.Resources.csproj", "{5ED7B77A-57E4-475A-98D4-36FC6C96221F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticUI.Resources", "SemanticUI.Resources\SemanticUI.Resources.csproj", "{5ED7B77A-57E4-475A-98D4-36FC6C96221F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticUI.TagHelpers", "SemanticUI.TagHelpers\SemanticUI.TagHelpers.csproj", "{DD5068F6-DCFA-477D-B12C-C14114058892}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SemanticUI.TagHelpers.Sample", "SemanticUI.TagHelpers.Sample\SemanticUI.TagHelpers.Sample.csproj", "{4EDAC2B9-87EC-4BF0-81EE-D0DD7D2478BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,12 +39,21 @@ Global
 		{5ED7B77A-57E4-475A-98D4-36FC6C96221F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ED7B77A-57E4-475A-98D4-36FC6C96221F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ED7B77A-57E4-475A-98D4-36FC6C96221F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD5068F6-DCFA-477D-B12C-C14114058892}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD5068F6-DCFA-477D-B12C-C14114058892}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD5068F6-DCFA-477D-B12C-C14114058892}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD5068F6-DCFA-477D-B12C-C14114058892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EDAC2B9-87EC-4BF0-81EE-D0DD7D2478BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EDAC2B9-87EC-4BF0-81EE-D0DD7D2478BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EDAC2B9-87EC-4BF0-81EE-D0DD7D2478BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EDAC2B9-87EC-4BF0-81EE-D0DD7D2478BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E57473B8-85A6-48EB-88F2-C6E7AAAD1C3B} = {41B5ACD5-5FF9-444E-8E07-56A59044E586}
+		{4EDAC2B9-87EC-4BF0-81EE-D0DD7D2478BB} = {41B5ACD5-5FF9-444E-8E07-56A59044E586}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {19DBC3B6-9EDC-4EF2-8567-F89349169320}

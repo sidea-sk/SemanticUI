@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+         <AssemblyName>Sidea.SemanticUI.TagHelpers</AssemblyName>
+        <RootNamespace>Sidea.SemanticUI.TagHelpers  </RootNamespace>
+        <RazorLangVersion>3.0</RazorLangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SemanticUI.Core\SemanticUI.Core.csproj" />
+    </ItemGroup>
+
+</Project>
