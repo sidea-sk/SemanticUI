@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using Sidea.SemanticUI.Core;
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Sidea.SemanticUI.TagHelpers
 {

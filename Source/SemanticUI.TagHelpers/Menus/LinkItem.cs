@@ -22,7 +22,7 @@ namespace Sidea.SemanticUI.TagHelpers
 
         public Color Color { get; set; }
 
-        public string Icon { get; set; }
+        public string RightIconName { get; set; }
 
         public bool IsActive { get; set; }
 
@@ -31,9 +31,9 @@ namespace Sidea.SemanticUI.TagHelpers
             output.TagName = "a";
             output.Attributes.Add("class", this.CreateClasses().ToClass());
 
-            if (!string.IsNullOrWhiteSpace(this.Icon))
+            if (!string.IsNullOrWhiteSpace(this.RightIconName))
             {
-                var iconClass = $"ui {this.Icon} icon";
+                var iconClass = $"ui {this.RightIconName} icon";
                 output.PostContent.SetHtmlContent($"<i class=\"{iconClass}\"></i>");
             }
 

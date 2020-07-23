@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Razor.TagHelpers;
 using Sidea.SemanticUI.Core;
 
 namespace Sidea.SemanticUI.TagHelpers
 {
-    [HtmlTargetElement("sui-button")]
-    public class ButtonTagHelper : SemanticTagHelper
+    public abstract class ButtonBase<T> : SemanticTagHelper
+        where T : ButtonBaseData
     {
-        private SingleButtonData _data = Activator.CreateInstance<SingleButtonData>();
+        private T _data = Activator.CreateInstance<T>();
 
-        public ButtonTagHelper() : base("button", "button")
+        protected ButtonBase(
+            string cssName,
+            string tagName) : base(cssName, tagName)
         {
         }
 
-        public SingleButtonData Data 
+        public T Data
         {
             get => _data;
-            set => _data = value ?? Activator.CreateInstance<SingleButtonData>();
+            set => _data = value ?? Activator.CreateInstance<T>();
         }
 
         public bool IsVisible
