@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Sidea.SemanticUI.Core;
 
-namespace Sidea.SemanticUI.TagHelpers.Labels
+namespace Sidea.SemanticUI.TagHelpers
 {
     [HtmlTargetElement("sui-labelGroup")]
     public class LabelGroup : SemanticTagHelper
