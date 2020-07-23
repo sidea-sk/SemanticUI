@@ -13,6 +13,8 @@ namespace Sidea.SemanticUI.TagHelpers
 
         public Color Color { get; set; }
 
+        public bool Inverted { get; set; }
+
         public bool Compact { get; set; }
 
         public bool Secondary { get; set; }
@@ -41,6 +43,7 @@ namespace Sidea.SemanticUI.TagHelpers
             yield return "piled".ToClassIf(this.Piled);
             yield return "stacked".ToClassIf(this.Stacked);
             yield return "raised".ToClassIf(this.Raised);
+            yield return "inverted".ToClassIf(this.Inverted);
             yield return "loading".ToClassIf(this.Loading);
             yield return this.Orientation.ToClass(emptyIf: Orientation.Horizontal);
         }
