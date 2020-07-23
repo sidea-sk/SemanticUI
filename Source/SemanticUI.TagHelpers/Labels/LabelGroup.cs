@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Components;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using Sidea.SemanticUI.Core;
 
-namespace Sidea.SemanticUI.Blazor
+namespace Sidea.SemanticUI.TagHelpers.Labels
 {
-    public class LabelBase : SemanticComponent
+    [HtmlTargetElement("sui-labelGroup")]
+    public class LabelGroup : SemanticTagHelper
     {
-        public LabelBase(string cssName = "label") : base(cssName)
+        public LabelGroup() : base("labels", "div")
         {
         }
 
-        [Parameter]
         public Color Color { get; set; }
 
-        [Parameter]
         public Size Size { get; set; }
 
-        [Parameter]
+        // only circular and tag
         public LabelDecorations Decorations { get; set; }
 
         protected override IEnumerable<string> Classes()

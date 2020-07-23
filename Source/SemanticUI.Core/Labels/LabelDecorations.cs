@@ -26,7 +26,7 @@ namespace Sidea.SemanticUI.Core
                 "basic".ToClassIf(decorations.HasFlag(Basic)),
                 "image".ToClassIf(decorations.HasFlag(Image)),
                 "floating".ToClassIf(decorations.HasFlag(Floating)),
-                "horizontal".ToClassIf(decorations.HasFlag(Horizontal)),
+                "horizontal".ToClassIf(decorations.HasFlag(Horizontal))
             };
 
             return classes.ToClass();
@@ -49,7 +49,7 @@ namespace Sidea.SemanticUI.Core
                 return "circular empty";
             }
 
-            return "circular".ToClassIf(decorations.HasFlag(Tag));
+            return "circular".ToClassIf(decorations.HasFlag(Circular));
         }
     }
 }

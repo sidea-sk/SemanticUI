@@ -13,12 +13,12 @@ namespace Sidea.SemanticUI.TagHelpers
 
         public Position Alignment { get; set; } = Position.Left;
 
-        public bool Pointing { get; set; }
+        public MenuDecorations Decorations { get; set; }
 
         protected override IEnumerable<string> Classes()
         {
+            yield return this.Decorations.ToClass();
             yield return this.Orientation.ToClass();
-            yield return "pointing".ToClassIf(this.Pointing);
             yield return this.Alignment.ToAlignmentClass();
         }
     }

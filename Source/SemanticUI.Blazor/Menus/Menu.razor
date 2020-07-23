@@ -17,12 +17,12 @@
     public Position Alignment { get; set; } = Left;
 
     [Parameter]
-    public bool Pointing { get; set; }
+    public MenuDecorations Decorations { get; set; }
 
     protected override IEnumerable<string> Classes()
     {
         yield return this.Orientation.ToClass();
-        yield return "pointing".ToClassIf(this.Pointing);
+        yield return this.Decorations.ToClass();
         yield return this.Alignment.ToAlignmentClass();
     }
 }
