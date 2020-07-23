@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Sidea.SemanticUI.Core;
 
-namespace Sidea.SemanticUI.TagHelpers.Forms
+namespace Sidea.SemanticUI.TagHelpers
 {
     [HtmlTargetElement("sui-form")]
     public class Form : SemanticTagHelper

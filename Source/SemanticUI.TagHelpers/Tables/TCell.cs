@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Sidea.SemanticUI.Core;
 
-namespace Sidea.SemanticUI.TagHelpers.Tables
+namespace Sidea.SemanticUI.TagHelpers
 {
     public abstract class TCell : TRowCell
     {

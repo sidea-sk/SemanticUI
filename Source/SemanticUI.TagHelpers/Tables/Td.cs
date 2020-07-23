@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace Sidea.SemanticUI.TagHelpers.Tables
+namespace Sidea.SemanticUI.TagHelpers
 {
     [HtmlTargetElement("sui-td")]
     public class Td : TCell

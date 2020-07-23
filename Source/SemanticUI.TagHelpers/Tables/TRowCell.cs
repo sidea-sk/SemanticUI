@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Sidea.SemanticUI.Core;
 
-namespace Sidea.SemanticUI.TagHelpers.Tables
+namespace Sidea.SemanticUI.TagHelpers
 {
     public abstract class TRowCell : SemanticTagHelper
     {
