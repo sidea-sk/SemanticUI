@@ -16,6 +16,8 @@
 
         public bool CanClose { get; set; }
 
+        public bool Floating { get; set; }
+
         public string[] Items { get; set; }
     }
 }

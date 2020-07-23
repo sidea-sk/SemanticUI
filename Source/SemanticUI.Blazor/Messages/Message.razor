@@ -112,6 +112,13 @@
     }
 
     [Parameter]
+    public bool Floating
+    {
+        get => _data.Floating;
+        set => _data.Floating = value;
+    }
+
+    [Parameter]
     public IEnumerable<string> Items
     {
         get => _data.Items;
@@ -140,5 +147,6 @@
         }
 
         yield return this.Size.ToClass();
+        yield return "floating".ToClassIf(this.Floating);
     }
 }

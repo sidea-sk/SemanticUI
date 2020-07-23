@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Collections\" />
     <Folder Include="Pages\Modules\" />
   </ItemGroup>
 

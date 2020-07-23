@@ -24,12 +24,16 @@ namespace Sidea.SemanticUI.TagHelpers
 
         protected string CssName { get; }
 
+        protected TagMode TagMode { get; set; } = TagMode.StartTagAndEndTag;
+
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = this.TagName;
-            output.Attributes.SetAttribute("class", this.Class());
-
             base.Process(context, output);
+
+            output.TagName = this.TagName;
+            output.TagMode = this.TagMode;
+
+            output.Attributes.SetAttribute("class", this.Class());
         }
 
         protected string Class()
