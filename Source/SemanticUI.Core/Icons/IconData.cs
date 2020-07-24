@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Sidea.SemanticUI.Core
 {
@@ -10,7 +11,7 @@ namespace Sidea.SemanticUI.Core
 
         public Color Color { get; set; } = Color.NoColor;
 
-        public bool Link { get; set; }
+        public IconDecorations Decorations { get; set; }
 
         public string ToClass() => this.Classes().ToClass();
 
@@ -19,7 +20,7 @@ namespace Sidea.SemanticUI.Core
             yield return this.Name;
             yield return this.Size.ToClass();
             yield return this.Color.ToClass();
-            yield return "link".ToClassIf(this.Link);
+            yield return this.Decorations.ToClass();
         }
     }
 }

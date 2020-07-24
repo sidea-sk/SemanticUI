@@ -38,10 +38,10 @@ namespace Sidea.SemanticUI.TagHelpers
             set => _data.Color = value;
         }
 
-        public bool Link
+       public IconDecorations Decorations
         {
-            get => _data.Link;
-            set => _data.Link = value;
+            get => _data.Decorations;
+            set => _data.Decorations = value;
         }
 
         protected override IEnumerable<string> Classes()

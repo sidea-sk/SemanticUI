@@ -5,6 +5,8 @@
          <AssemblyName>Sidea.SemanticUI.TagHelpers</AssemblyName>
         <RootNamespace>Sidea.SemanticUI.TagHelpers  </RootNamespace>
         <RazorLangVersion>3.0</RazorLangVersion>
+        <Version>1.0.2</Version>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
