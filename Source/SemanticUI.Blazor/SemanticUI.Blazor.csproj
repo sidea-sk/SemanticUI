@@ -6,7 +6,7 @@
         <OutputType>Library</OutputType>
         <AssemblyName>Sidea.SemanticUI.Blazor</AssemblyName>
         <RootNamespace>Sidea.SemanticUI.Blazor</RootNamespace>
-        <Version>1.0.18</Version>
+        <Version>1.0.21</Version>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
@@ -20,7 +20,6 @@
 
     <ItemGroup>
         <Folder Include="Dimmers\" />
-        <Folder Include="Icons\" />
         <Folder Include="Messages\" />
         <Folder Include="Grids\" />
         <Folder Include="Forms\" />

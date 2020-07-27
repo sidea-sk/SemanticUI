@@ -17,10 +17,14 @@ namespace Sidea.SemanticUI.Blazor
         [Parameter]
         public Size Size { get; set; }
 
+        [Parameter]
+        public LabelDecorations Decorations { get; set; }
+
         protected override IEnumerable<string> Classes()
         {
             yield return this.Color.ToClass();
             yield return this.Size.ToClass();
+            yield return this.Decorations.ToClass();
         }
     }
 }

@@ -11,7 +11,7 @@
     }
 
     [Parameter]
-    public TableParameters Parameters { get; set; } = Compact | Striped;
+    public TableDecorations Decorations { get; set; } = Compact | Striped;
 
     [Parameter]
     public Size Size { get; set; }
@@ -25,7 +25,7 @@
     protected override IEnumerable<string> Classes()
     {
         yield return this.Size.ToClass();
-        yield return this.Parameters.ToClass();
+        yield return this.Decorations.ToClass();
         yield return this.Columns.ToClass(of: "column");
         yield return this.Color.ToClass();
     }

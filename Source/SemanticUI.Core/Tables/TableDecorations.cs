@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 
-using static Sidea.SemanticUI.Core.TableParameters;
+using static Sidea.SemanticUI.Core.TableDecorations;
 
 namespace Sidea.SemanticUI.Core
 {
     [Flags]
-    public enum TableParameters
+    public enum TableDecorations
     {
         DefaultProperties = 0,
         Basic             = 1 << 0,
@@ -27,16 +27,16 @@ namespace Sidea.SemanticUI.Core
 
     public static class TableParametersExtensions
     {
-        private static readonly TableParameters[] allValues = Enum.GetValues(typeof(TableParameters))
-                .Cast<TableParameters>()
+        private static readonly TableDecorations[] allValues = Enum.GetValues(typeof(TableDecorations))
+                .Cast<TableDecorations>()
                 .ToArray();
 
-        public static string ToClass(this TableParameters properties)
+        public static string ToClass(this TableDecorations decorations)
         {
             var classes = allValues
-                .Select(v => 
+                .Select(v =>
                 {
-                    return properties.HasFlag(v)
+                    return decorations.HasFlag(v)
                         ? v.ValueToClass()
                         : string.Empty;
                 });
@@ -44,10 +44,11 @@ namespace Sidea.SemanticUI.Core
             return classes.ToClass();
         }
 
-        private static string ValueToClass(this TableParameters value)
+        private static string ValueToClass(this TableDecorations value)
         {
             return value switch
             {
+                DefaultProperties => string.Empty,
                 VeryBasic => "very basic",
                 VeryPadded => "very padded",
                 SingleLine => "single line",

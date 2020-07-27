@@ -10,8 +10,13 @@
     {
     }
 
+    public Color Color { get; set; }
+
+    public CardDecorations Decorations { get; set; }
+
     protected override IEnumerable<string> Classes()
     {
-        yield break;
+        yield return this.Color.ToClass();
+        yield return this.Decorations.ToClass();
     }
 }
