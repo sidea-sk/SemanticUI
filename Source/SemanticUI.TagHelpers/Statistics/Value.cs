@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using Sidea.SemanticUI.Core;
 
 namespace Sidea.SemanticUI.TagHelpers.Statistics
 {
@@ -10,9 +11,11 @@ namespace Sidea.SemanticUI.TagHelpers.Statistics
         {
         }
 
+        public bool IsTextValue { get; set; }
+
         protected override IEnumerable<string> Classes()
         {
-            yield break;
+            yield return "text".ToClassIf(this.IsTextValue);
         }
     }
 }
