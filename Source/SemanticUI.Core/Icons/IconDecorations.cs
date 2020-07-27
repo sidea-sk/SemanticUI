@@ -7,16 +7,16 @@ namespace Sidea.SemanticUI.Core
 {
     public enum IconDecorations
     {
-        NoDecor  = 0,
-        Link     = 1 << 0,
-        Inverted = 1 << 1,
-        Disabled = 1 << 2,
-        Loading  = 1 << 3,
-        Fitted   = 1 << 4,
-        Flipped  = 1 << 5,
-        Rotated  = 1 << 6,
-        Circular = 1 << 7,
-        Bordered = 1 << 8
+        NoDecoration  = 0,
+        Link          = 1 << 0,
+        Inverted      = 1 << 1,
+        Disabled      = 1 << 2,
+        Loading       = 1 << 3,
+        Fitted        = 1 << 4,
+        Flipped       = 1 << 5,
+        Rotated       = 1 << 6,
+        Circular      = 1 << 7,
+        Bordered      = 1 << 8
     }
 
     public static class IconDecorationsExtensions
@@ -42,7 +42,7 @@ namespace Sidea.SemanticUI.Core
         {
             return value switch
             {
-                NoDecor => string.Empty,
+                NoDecoration => string.Empty,
                 _ => value.ToString().ToLower(),
             };
         }
