@@ -14,43 +14,27 @@
     public Color Color { get; set; }
 
     [Parameter]
-    public bool Compact { get; set; }
+    public SegmentDecorations Decorations { get; set; }
 
     [Parameter]
-    public bool Secondary { get; set; }
+    public Position Alignment { get; set; }
 
     [Parameter]
-    public bool Loading { get; set; }
+    public Position Attached { get; set; }
 
     [Parameter]
-    public bool Stacked { get; set; }
-
-    [Parameter]
-    public bool Raised { get; set; }
-
-    [Parameter]
-    public bool Piled { get; set; }
-
-    [Parameter]
-    public bool Placeholder { get; set; }
-
-    [Parameter]
-    public bool Blurred { get; set; }
+    public Position Floated { get; set; }
 
     [Parameter]
     public Orientation Orientation { get; set; } = Horizontal;
 
     protected override IEnumerable<string> Classes()
     {
-        yield return "blurring dimmable dimmed".ToClassIf(this.Blurred);
-        yield return "placeholder".ToClassIf(this.Placeholder);
-        yield return "compact".ToClassIf(this.Compact);
+        yield return this.Decorations.ToClass();
         yield return this.Color.ToClass();
-        yield return "secondary".ToClassIf(this.Secondary);
-        yield return "piled".ToClassIf(this.Piled);
-        yield return "stacked".ToClassIf(this.Stacked);
-        yield return "raised".ToClassIf(this.Raised);
-        yield return "loading".ToClassIf(this.Loading);
+        yield return this.Alignment.ToAlignmentClass();
+        yield return this.Floated.ToFloatedClass();
+        yield return this.Attached.ToAttachedClass();
         yield return this.Orientation.ToClass(emptyIf: Horizontal);
     }
 }

@@ -25,9 +25,13 @@
     {
         public static string ToClass(this Amount count, string of)
         {
-            return count == Amount.Undefined
-                ? string.Empty
-                : count.ToString().ToLower() + " " + of;
+            if(count == Amount.Undefined)
+            {
+                return string.Empty;
+            }
+
+            var suffix = string.IsNullOrEmpty(of) ? string.Empty : " " + of;
+            return count.ToString().ToLower() + suffix;
         }
     }
 }

@@ -8,11 +8,12 @@ namespace Sidea.SemanticUI.Core
     public enum Position
     {
         Default = 0,
-        Top = 1,
-        Center = 2,
-        Bottom = 4,
-        Left = 8,
-        Right = 16,
+        Top     = 1 << 0,
+        Center  = 1 << 1,
+        Bottom  = 1 << 2,
+        Left    = 1 << 3,
+        Right   = 1 << 4,
+        Middle  = 1 << 5,
 
         TopLeft = Top | Left,
         TopCenter = Top | Center,
@@ -84,6 +85,11 @@ namespace Sidea.SemanticUI.Core
 
         public static string ToAttachedClass(this Position position)
         {
+            if (position.HasFlag(Middle))
+            {
+                return "attached";
+            }
+
             var @class = string.Empty;
             if (position.HasFlag(Top))
             {
@@ -94,7 +100,9 @@ namespace Sidea.SemanticUI.Core
                 @class += "bottom" + position.AttachedHorizontal();
             }
 
-            return @class;
+            return string.IsNullOrEmpty(@class)
+                ? @class
+                : @class + " attached";
         }
 
         public static string ToLabelClass(this Position position)

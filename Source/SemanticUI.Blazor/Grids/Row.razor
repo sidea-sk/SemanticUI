@@ -11,10 +11,14 @@
     }
 
     [Parameter]
+    public Position Alignment { get; set; }
+
+    [Parameter]
     public Amount Columns { get; set; }
 
     protected override IEnumerable<string> Classes()
     {
+        yield return this.Alignment.ToAlignmentClass();
         yield return this.Columns.ToClass("columns");
     }
 }
