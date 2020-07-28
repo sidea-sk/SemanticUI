@@ -10,7 +10,7 @@ namespace Sidea.SemanticUI.TagHelpers
     {
         private IconData _data = new IconData();
 
-        public Icon() : base("icon", "i")
+        public Icon() : base("icon", "i", false)
         {
         }
 
@@ -38,7 +38,7 @@ namespace Sidea.SemanticUI.TagHelpers
             set => _data.Color = value;
         }
 
-       public IconDecorations Decorations
+        public IconDecorations Decorations
         {
             get => _data.Decorations;
             set => _data.Decorations = value;
