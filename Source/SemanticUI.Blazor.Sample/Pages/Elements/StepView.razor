@@ -1,0 +1,224 @@
+﻿@page "/Elements/Step"
+
+<h1>Step</h1>
+
+<Example Header="Step"
+         Text="A single step">
+    <StepPanel>
+        <Step>
+            Shipping
+        </Step>
+    </StepPanel>
+</Example>
+
+<h1>Groups</h1>
+
+<Example Header="Steps"
+         Text="A set of steps">
+    <StepPanel>
+        <Step IconName="truck">
+            <StepTitle>
+                Shipping
+            </StepTitle>
+            <StepDescription>
+                Choose your shipping options
+            </StepDescription>
+        </Step>
+        <Step>
+            <StepTitle>
+                Billing
+            </StepTitle>
+            <StepDescription>
+                Enter billing information
+            </StepDescription>
+        </Step>
+    </StepPanel>
+
+    <br />
+
+    <StepPanel>
+        <Step IconName="truck"
+              Decorations="StepDecorations.Link">
+            <StepTitle>
+                Shipping
+            </StepTitle>
+            <StepDescription>
+                Choose your shipping options
+            </StepDescription>
+        </Step>
+        <Step Decorations="StepDecorations.Link">
+            <StepTitle>
+                Billing
+            </StepTitle>
+            <StepDescription>
+                Enter billing information
+            </StepDescription>
+        </Step>
+    </StepPanel>
+</Example>
+
+<h1>States</h1>
+
+<Example Header="Active"
+         Text="A step can be highlighted as active">
+
+    <StepPanel>
+        <Step Decorations="StepDecorations.Active"
+              IconName="payment">
+            <StepTitle>
+                Billing
+            </StepTitle>
+            <StepDescription>
+                Enter billing information
+            </StepDescription>
+        </Step>
+    </StepPanel>
+</Example>
+
+<Example Header="Completed"
+         Text="A step can show that a user has completed it">
+
+    <StepPanel>
+        <Step Decorations="StepDecorations.Completed"
+              IconName="payment">
+            <StepTitle>
+                Billing
+            </StepTitle>
+            <StepDescription>
+                Enter billing information
+            </StepDescription>
+        </Step>
+    </StepPanel>
+</Example>
+
+<Example Header="Disabled"
+         Text="A step can show that it cannot be selected">
+
+    <StepPanel>
+        <Step Decorations="StepDecorations.Disabled"
+              IconName="payment">
+            <StepTitle>
+                Billing
+            </StepTitle>
+            <StepDescription>
+                Enter billing information
+            </StepDescription>
+        </Step>
+    </StepPanel>
+</Example>
+
+<h1>Variations</h1>
+
+<Example Header="Evenly divided"
+         Text="Steps can be divided evenly inside their parent">
+
+    <StepPanel Amount="Three">
+        <Step IconName="truck">
+            <StepTitle>
+                Shippinng
+            </StepTitle>
+        </Step>
+        <Step IconName="payment"
+              Decorations="StepDecorations.Active">
+            <StepTitle>
+                Billing
+            </StepTitle>
+        </Step>
+        <Step IconName="info"
+              Decorations="StepDecorations.Disabled">
+            <StepTitle>
+                Confirm order
+            </StepTitle>
+        </Step>
+    </StepPanel>
+</Example>
+
+<Example Header="Size"
+         Text="Steps can have different sizes">
+
+    <StepPanel Size="Mini">
+        <Step IconName="truck">
+            <StepTitle>
+                Shippinng
+            </StepTitle>
+        </Step>
+        <Step IconName="payment"
+              Decorations="StepDecorations.Active">
+            <StepTitle>
+                Billing
+            </StepTitle>
+        </Step>
+        <Step IconName="info"
+              Decorations="StepDecorations.Disabled">
+            <StepTitle>
+                Confirm order
+            </StepTitle>
+        </Step>
+    </StepPanel>
+
+    <br />
+
+    <StepPanel Size="Tiny">
+        <Step IconName="truck">
+            <StepTitle>
+                Shippinng
+            </StepTitle>
+        </Step>
+        <Step IconName="payment"
+              Decorations="StepDecorations.Active">
+            <StepTitle>
+                Billing
+            </StepTitle>
+        </Step>
+        <Step IconName="info"
+              Decorations="StepDecorations.Disabled">
+            <StepTitle>
+                Confirm order
+            </StepTitle>
+        </Step>
+    </StepPanel>
+
+    <br />
+
+    <StepPanel Size="Small">
+        <Step IconName="truck">
+            <StepTitle>
+                Shippinng
+            </StepTitle>
+        </Step>
+        <Step IconName="payment"
+              Decorations="StepDecorations.Active">
+            <StepTitle>
+                Billing
+            </StepTitle>
+        </Step>
+        <Step IconName="info"
+              Decorations="StepDecorations.Disabled">
+            <StepTitle>
+                Confirm order
+            </StepTitle>
+        </Step>
+    </StepPanel>
+
+    <br />
+
+    <StepPanel Size="Large">
+        <Step IconName="truck">
+            <StepTitle>
+                Shippinng
+            </StepTitle>
+        </Step>
+        <Step IconName="payment"
+              Decorations="StepDecorations.Active">
+            <StepTitle>
+                Billing
+            </StepTitle>
+        </Step>
+        <Step IconName="info"
+              Decorations="StepDecorations.Disabled">
+            <StepTitle>
+                Confirm order
+            </StepTitle>
+        </Step>
+    </StepPanel>
+</Example>
