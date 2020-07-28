@@ -109,10 +109,58 @@
 
 <h1>Variations</h1>
 
+<Example Header="Attached"
+         Text="Steps can be attached to other elements">
+
+    <StepPanel StepsCount="Three"
+               Attached="Top">
+        <Step IconName="truck">
+            <StepTitle>
+                Shippinng
+            </StepTitle>
+        </Step>
+        <Step IconName="payment"
+              Decorations="StepDecorations.Active">
+            <StepTitle>
+                Billing
+            </StepTitle>
+        </Step>
+        <Step IconName="info"
+              Decorations="StepDecorations.Disabled">
+            <StepTitle>
+                Confirm order
+            </StepTitle>
+        </Step>
+    </StepPanel>
+    <Segment Attached="Middle">
+        some content in the segment
+    </Segment>
+    <StepPanel StepsCount="Three"
+               Attached="Bottom">
+        <Step IconName="truck">
+            <StepTitle>
+                Shippinng
+            </StepTitle>
+        </Step>
+        <Step IconName="payment"
+              Decorations="StepDecorations.Active">
+            <StepTitle>
+                Billing
+            </StepTitle>
+        </Step>
+        <Step IconName="info"
+              Decorations="StepDecorations.Disabled">
+            <StepTitle>
+                Confirm order
+            </StepTitle>
+        </Step>
+    </StepPanel>
+</Example>
+
 <Example Header="Evenly divided"
          Text="Steps can be divided evenly inside their parent">
 
-    <StepPanel Amount="Three">
+    <StepPanel StepsCount="Three">
         <Step IconName="truck">
             <StepTitle>
                 Shippinng

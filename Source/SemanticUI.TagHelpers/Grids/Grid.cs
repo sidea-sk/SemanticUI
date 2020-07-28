@@ -14,20 +14,20 @@ namespace Sidea.SemanticUI.TagHelpers
 
         public Amount Columns { get; set; }
 
-        public bool Stackable { get; set; }
+        public GridDecorations Decorations { get; set; }
 
         public bool IsContainer { get; set; }
 
         protected override IEnumerable<string> Classes()
         {
+            yield return this.Decorations.ToClass();
             yield return this.Columns.ToClass("column");
-            yield return "stackable".ToClassIf(this.Stackable);
         }
 
         protected override IEnumerable<string> AfterCssNameClasses()
         {
             return base.AfterCssNameClasses()
-                .Concat(new[] { this.IsContainer.ToClassIf("container") })
+                .Concat(new[] { "container".ToClassIf(this.IsContainer) })
                 ;
         }
     }
