@@ -1,7 +1,9 @@
 ﻿@inherits SemanticComponent
 @namespace Sidea.SemanticUI.Blazor
 
-<div class="@Class()">
+<div class="@Class()"
+     @onclick="OnClick">
+
     @if (!string.IsNullOrWhiteSpace(this.IconName))
     {
         <Icon Name="@IconName" />
@@ -45,6 +47,9 @@
 
     [Parameter]
     public RenderFragment StepDescription { get; set; }
+
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
 
     private bool HasContent => this.StepTitle != null || this.StepDescription != null;
 
