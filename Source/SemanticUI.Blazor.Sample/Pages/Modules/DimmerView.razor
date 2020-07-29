@@ -24,7 +24,7 @@
 <Example Header="Blurring"
          Text="A dimmable element can blur its contents">
 
-    <Segment Blurred="IsActive2">
+    <Segment Decorations="Example2">
         <h3 class="ui header">
             Overlayable Section
         </h3>
@@ -36,7 +36,7 @@
         </Dimmer>
     </Segment>
 
-    <Segment Blurred="IsActive2">
+    <Segment Decorations="Example2">
         <h3 class="ui header">
             Overlayable Section
         </h3>
@@ -105,6 +105,7 @@
 @code {
     private bool IsActive1 { get; set; }
     private bool IsActive2 { get; set; }
+    private SegmentDecorations Example2 => this.IsActive2 ? SegmentDecorations.Blurred : SegmentDecorations.NoDecoration;
     private bool IsActive3 { get; set; }
     private bool IsActive4 { get; set; }
 

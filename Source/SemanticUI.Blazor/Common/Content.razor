@@ -6,15 +6,23 @@
 </div>
 
 @code {
-    public CardContent() : base("content", prefixUiClass: false)
+    public Content() : base("content", false)
     {
     }
 
     [Parameter]
     public bool Extra { get; set; }
 
+    [Parameter]
+    public Position VerticalAligned { get; set; }
+
+    [Parameter]
+    public Position Floated { get; set; }
+
     protected override IEnumerable<string> Classes()
     {
+        yield return this.VerticalAligned.ToVerticalAlignmentClass();
+        yield return this.Floated.ToFloatedClass();
         yield return "extra".ToClassIf(this.Extra);
     }
 }

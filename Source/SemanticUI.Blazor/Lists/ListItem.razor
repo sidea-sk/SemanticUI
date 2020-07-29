@@ -1,0 +1,15 @@
+﻿@inherits SemanticComponent
+@namespace Sidea.SemanticUI.Blazor
+
+<h3>ListItem</h3>
+
+@code {
+    public ListItem(): base("item", false)
+    {
+    }
+
+    protected override IEnumerable<string> Classes()
+    {
+        yield break;
+    }
+}

@@ -9,11 +9,11 @@ namespace Sidea.SemanticUI.Core
     {
         Default = 0,
         Top     = 1 << 0,
-        Center  = 1 << 1,
+        Middle  = 1 << 1,
         Bottom  = 1 << 2,
         Left    = 1 << 3,
-        Right   = 1 << 4,
-        Middle  = 1 << 5,
+        Center  = 1 << 4,
+        Right   = 1 << 5,
 
         TopLeft = Top | Left,
         TopCenter = Top | Center,
@@ -46,6 +46,7 @@ namespace Sidea.SemanticUI.Core
             {
                 case Top:
                 case Bottom:
+                case Middle:
                     return position.ToString().ToLower() + " aligned";
                 default:
                     return string.Empty;
