@@ -7,7 +7,7 @@
         <AssemblyName>Sidea.SemanticUI.Blazor</AssemblyName>
         <RootNamespace>Sidea.SemanticUI.Blazor</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.0.25</Version>
+        <Version>1.0.26</Version>
     </PropertyGroup>
 
     <ItemGroup>
