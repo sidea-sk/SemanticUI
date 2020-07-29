@@ -37,7 +37,7 @@ namespace Sidea.SemanticUI.Blazor
 
             if (this.ColSpan > 1)
             {
-                attributes.Add("colspan", this.RowSpan);
+                attributes.Add("colspan", this.ColSpan);
             }
         }
 
