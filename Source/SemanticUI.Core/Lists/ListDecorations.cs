@@ -8,17 +8,17 @@ namespace Sidea.SemanticUI.Core
     [Flags]
     public enum ListDecorations
     {
-        NoDecoration,
-        Animated,
-        Bulleted,
-        Celled,
-        Divided,
-        Inverted,
-        Link,
-        Ordered,
-        Relaxed,
-        VeryRelaxed,
-        Selection,
+        NoDecoration = 0,
+        Animated     = 1 << 0,
+        Bulleted     = 1 << 1,
+        Celled       = 1 << 2,
+        Divided      = 1 << 3,
+        Inverted     = 1 << 4,
+        Link         = 1 << 5,
+        Ordered      = 1 << 6,
+        Relaxed      = 1 << 7,
+        VeryRelaxed  = 1 << 8,
+        Selection    = 1 << 9,
     }
 
     public static class ListDecorationsExtensions

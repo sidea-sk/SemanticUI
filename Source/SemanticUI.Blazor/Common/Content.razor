@@ -14,14 +14,14 @@
     public bool Extra { get; set; }
 
     [Parameter]
-    public Position VerticalAligned { get; set; }
+    public Position VerticallyAligned { get; set; }
 
     [Parameter]
     public Position Floated { get; set; }
 
     protected override IEnumerable<string> Classes()
     {
-        yield return this.VerticalAligned.ToVerticalAlignmentClass();
+        yield return this.VerticallyAligned.ToVerticalAlignmentClass();
         yield return this.Floated.ToFloatedClass();
         yield return "extra".ToClassIf(this.Extra);
     }

@@ -1,4 +1,4 @@
-﻿@inherits MenuItem
+﻿@inherits ItemBase
 @implements IDisposable
 @namespace Sidea.SemanticUI.Blazor
 
@@ -21,7 +21,7 @@
     public string Href { get; set; }
 
     [Parameter]
-    public ActiveUrlMatch ActiveUrlMatch { get; set; } = ActiveUrlMatch.Exact;
+    public ActiveUrlMatch ActiveUrlMatch { get; set; } = ActiveUrlMatch.None;
 
     protected override void OnInitialized()
     {
@@ -47,7 +47,12 @@
 
     private void SetIsActiveFromNavigationManager()
     {
-        this.IsActive = this.NavigationManager.BaseUri + Href.TrimStart('/') == this.NavigationManager.Uri;
+        if(this.ActiveUrlMatch == ActiveUrlMatch.None || this.NavigationManager == null)
+        {
+            return;
+        }
+
+        this.IsActive = this.NavigationManager.BaseUri + Href?.TrimStart('/') == this.NavigationManager.Uri;
         this.StateHasChanged();
     }
 
