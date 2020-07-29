@@ -1,0 +1,11 @@
+﻿@inherits ItemBase
+@namespace Sidea.SemanticUI.Blazor
+
+<div class="@Class()">
+    @ChildContent
+
+    @if (HasRightIcon)
+    {
+        <i class="@RightIcon icon"></i>
+    }
+</div>

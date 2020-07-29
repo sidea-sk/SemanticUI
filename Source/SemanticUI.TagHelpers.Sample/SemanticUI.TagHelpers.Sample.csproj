@@ -5,13 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SemanticUI.Core\SemanticUI.Core.csproj" />
-    <ProjectReference Include="..\SemanticUI.Resources\SemanticUI.Resources.csproj" />
-    <ProjectReference Include="..\SemanticUI.TagHelpers\SemanticUI.TagHelpers.csproj" />
+    <Compile Remove="Pages\Modules\**" />
+    <Content Remove="Pages\Modules\**" />
+    <EmbeddedResource Remove="Pages\Modules\**" />
+    <None Remove="Pages\Modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Modules\" />
+    <ProjectReference Include="..\SemanticUI.Core\SemanticUI.Core.csproj" />
+    <ProjectReference Include="..\SemanticUI.Resources\SemanticUI.Resources.csproj" />
+    <ProjectReference Include="..\SemanticUI.TagHelpers\SemanticUI.TagHelpers.csproj" />
   </ItemGroup>
 
 </Project>
