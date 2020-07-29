@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace Sidea.SemanticUI.TagHelpers.Steps
+namespace Sidea.SemanticUI.TagHelpers.Common
 {
-    [HtmlTargetElement("step-description")]
-    public class Description : SemanticTagHelper
+    [HtmlTargetElement("sui-title")]
+    public class Title : SemanticTagHelper
     {
-        public Description() : base("description", "div", false)
+        public Title() : base("title", "div", false)
         {
         }
 

@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace Sidea.SemanticUI.TagHelpers.Cards
+namespace Sidea.SemanticUI.TagHelpers.Common
 {
-    [HtmlTargetElement("sui-card-header")]
-    public class CardHeader : SemanticTagHelper
+    [HtmlTargetElement("sui-description")]
+    public class Description : SemanticTagHelper
     {
-        public CardHeader() : base("header", "div", false)
+        public Description() : base("description", "div", false)
         {
         }
 

@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Sidea.SemanticUI.Core;
 
-namespace Sidea.SemanticUI.TagHelpers
+namespace Sidea.SemanticUI.TagHelpers.Common.Items
 {
-    [HtmlTargetElement("sui-linkItem")]
+    [HtmlTargetElement("sui-link-item")]
     public class LinkItem : AnchorTagHelper
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
@@ -18,26 +18,29 @@ namespace Sidea.SemanticUI.TagHelpers
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public ActiveUrlMatch ActiveUrlMatch { get; set; } = ActiveUrlMatch.Exact;
-
         public Color Color { get; set; }
-
-        public string RightIconName { get; set; }
 
         public bool IsActive { get; set; }
 
+        public string RightIcon { get; set; }
+
+        public ActiveUrlMatch ActiveUrlMatch { get; set; } = ActiveUrlMatch.Exact;
+
+        protected bool HasRightIcon => !string.IsNullOrWhiteSpace(this.RightIcon);
+
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
+            base.Process(context, output);
             output.TagName = "a";
+            output.TagMode = TagMode.StartTagAndEndTag;
+
             output.Attributes.Add("class", this.CreateClasses().ToClass());
 
-            if (!string.IsNullOrWhiteSpace(this.RightIconName))
+            if (!string.IsNullOrWhiteSpace(this.RightIcon))
             {
-                var iconClass = $"ui {this.RightIconName} icon";
+                var iconClass = $"ui {this.RightIcon} icon";
                 output.PostContent.SetHtmlContent($"<i class=\"{iconClass}\"></i>");
             }
-
-            base.Process(context, output);
         }
 
         private IEnumerable<string> CreateClasses()
@@ -54,7 +57,7 @@ namespace Sidea.SemanticUI.TagHelpers
                 return true;
             }
 
-            if (this.ActiveUrlMatch == ActiveUrlMatch.None|| string.IsNullOrWhiteSpace(this.Page))
+            if (this.ActiveUrlMatch == ActiveUrlMatch.None || string.IsNullOrWhiteSpace(this.Page))
             {
                 return false;
             }
