@@ -9,25 +9,6 @@
         <Icon Name="@IconName" />
     }
 
-    @if (this.HasContent)
-    {
-        <div class="content">
-            @if (this.StepTitle != null)
-            {
-                <div class="title">
-                    @StepTitle
-                </div>
-            }
-
-            @if (this.StepDescription != null)
-            {
-                <div class="description">
-                    @StepDescription
-                </div>
-            }
-        </div>
-    }
-
     @ChildContent
 </div>
 
@@ -43,15 +24,7 @@
     public StepDecorations Decorations { get; set; }
 
     [Parameter]
-    public RenderFragment StepTitle { get; set; }
-
-    [Parameter]
-    public RenderFragment StepDescription { get; set; }
-
-    [Parameter]
     public EventCallback<MouseEventArgs> OnClick { get; set; }
-
-    private bool HasContent => this.StepTitle != null || this.StepDescription != null;
 
     protected override IEnumerable<string> Classes()
     {
