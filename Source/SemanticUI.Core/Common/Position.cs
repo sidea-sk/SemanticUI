@@ -53,11 +53,12 @@ namespace Sidea.SemanticUI.Core
             }
         }
 
-        public static string ToFloatedClass(this Position position)
+        public static string ToFloatedClass(this Position position, bool forceLeft = false)
         {
             switch (position)
             {
                 case Right:
+                case Left when forceLeft:
                     return position.ToString().ToLower() + " floated";
                 default:
                     return string.Empty;
