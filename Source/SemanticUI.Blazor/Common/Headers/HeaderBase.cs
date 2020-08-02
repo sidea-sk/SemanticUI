@@ -38,7 +38,7 @@ namespace Sidea.SemanticUI.Blazor
             }
             yield return this.Size.ToClass();
             yield return this.Attached.ToAttachedClass();
-            yield return this.Floated.ToFloatedClass(true);
+            yield return this.Floated.ToFloatedClass();
         }
     }
 }

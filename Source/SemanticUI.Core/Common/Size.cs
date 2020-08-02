@@ -6,6 +6,7 @@
         Mini,
         Tiny,
         Small,
+        Medium,
         Large,
         Big,
         Huge,
