@@ -8,8 +8,6 @@ namespace Sidea.SemanticUI.TagHelpers
 {
     public abstract class SemanticTagHelper : TagHelper
     {
-        private readonly bool _prefixUi;
-
         protected SemanticTagHelper(
             string cssName,
             string tagName,
@@ -17,12 +15,14 @@ namespace Sidea.SemanticUI.TagHelpers
         {
             this.CssName = cssName;
             this.TagName = tagName;
-            _prefixUi = prefixUi;
+            this.PrefixUi = prefixUi;
         }
 
         protected string TagName { get; }
 
         protected string CssName { get; }
+
+        protected bool PrefixUi { get; set; }
 
         protected TagMode TagMode { get; set; } = TagMode.StartTagAndEndTag;
 
@@ -40,7 +40,7 @@ namespace Sidea.SemanticUI.TagHelpers
         {
             return new []
                 {
-                    "ui".ToClassIf(_prefixUi)
+                    "ui".ToClassIf(PrefixUi)
                 }
                 .Concat(this.Classes())
                 .Concat(new[] { this.CssName })
