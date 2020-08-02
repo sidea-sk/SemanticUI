@@ -28,8 +28,11 @@ namespace Sidea.SemanticUI.TagHelpers.Images
         {
             base.Process(context, output);
 
-            output.Attributes.SetAttribute("src", this.Src);
-            output.Attributes.SetAttribute("alt", this.Alt);
+            output.Attributes.SetAttribute("src", this.Src ?? string.Empty);
+            if (!string.IsNullOrWhiteSpace(this.Alt))
+            {
+                output.Attributes.SetAttribute("alt", this.Alt);
+            }
         }
 
         protected override IEnumerable<string> Classes()
