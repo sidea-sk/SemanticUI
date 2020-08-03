@@ -5,11 +5,15 @@
     @Left
 
     <input value="@Value"
-           @onchange="this.InputValueChanged"
            type="text"
            placeholder="@Placeholder"
            readonly="@IsReadonly"
-           disabled="@IsDisabled" />
+           disabled="@IsDisabled"
+           @onchange="this.InputValueChanged"
+           @onkeydown="this.OnKeyDown"
+           @onkeyup="this.OnKeyUp"
+           @onfocus="this.OnFocus"
+           @onblur="this.OnBlur" />
 
     @Right
 </div>
@@ -18,6 +22,7 @@
     public SeInput() : base("input")
     {
     }
+
 
     [Parameter]
     public string Value { get; set; }
@@ -36,6 +41,18 @@
 
     [Parameter]
     public RenderFragment Right { get; set; }
+
+    [Parameter]
+    public EventCallback<KeyboardEventArgs> OnKeyDown { get; set; }
+
+    [Parameter]
+    public EventCallback<KeyboardEventArgs> OnKeyUp { get; set; }
+
+    [Parameter]
+    public EventCallback<FocusEventArgs> OnBlur { get; set; }
+
+    [Parameter]
+    public EventCallback<FocusEventArgs> OnFocus { get; set; }
 
     private bool IsReadonly => this.State == EditState.ReadOnly;
     private bool IsDisabled => this.State == EditState.Disabled;

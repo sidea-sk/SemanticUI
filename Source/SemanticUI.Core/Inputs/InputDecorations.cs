@@ -1,4 +1,6 @@
-﻿using static Sidea.SemanticUI.Core.InputDecorations;
+﻿using System.Linq;
+
+using static Sidea.SemanticUI.Core.InputDecorations;
 
 namespace Sidea.SemanticUI.Core
 {
@@ -6,55 +8,48 @@ namespace Sidea.SemanticUI.Core
     public enum InputDecorations
     {
         NoDecoration = 0,
-        Icon         = 1 << 0,
-        IconRight    = 1 << 1, // use either Icon or IconRight
-        Labeled      = 1 << 2,
-        LabeledRight = 1 << 3, // use either Label or LabelRight
-        Action       = 1 << 4,
-        Inverted     = 1 << 5,
-        Fluid        = 1 << 6,
-        Transparent  = 1 << 7
+        Action       = 1 << 0,
+        Icon         = 1 << 1,
+        IconRight    = 1 << 2, // use either Icon or IconRight
+        Inverted     = 1 << 3,
+        Labeled      = 1 << 4,
+        LabeledRight = 1 << 5, // use either Label or LabelRight
+        Loading      = 1 << 6,
+        Fluid        = 1 << 7,
+        Focus        = 1 << 8,
+        Transparent  = 1 << 9
     }
 
     public static class InputDecorationsExtensions
     {
+        private static readonly InputDecorations[] allValues = System.Enum.GetValues(typeof(InputDecorations))
+                .Cast<InputDecorations>()
+                .ToArray();
+
         public static string ToClass(this InputDecorations decorations)
         {
-            var classes = new string[]
-            {
-                decorations.IconClass(),
-                decorations.LabelClass(),
-                "transparent".ToClassIf(decorations.HasFlag(Transparent)),
-                "fluid".ToClassIf(decorations.HasFlag(Fluid)),
-                "inverted".ToClassIf(decorations.HasFlag(Inverted)),
-                "action".ToClassIf(decorations.HasFlag(Action))
-            };
+            var classes = allValues
+                .Select(v =>
+                {
+                    return decorations.HasFlag(v)
+                        ? v.ValueToClass()
+                        : string.Empty;
+                });
 
             return classes.ToClass();
         }
 
-        private static string IconClass(this InputDecorations decorations)
+        private static string ValueToClass(this InputDecorations value)
         {
-            if (decorations.HasFlag(IconRight))
+            return value switch
             {
-                return "right icon";
-            }
-
-            return decorations.HasFlag(Icon)
-                ? "left icon"
-                : string.Empty;
-        }
-
-        private static string LabelClass(this InputDecorations decorations)
-        {
-            if (decorations.HasFlag(LabeledRight))
-            {
-                return "right labeled";
-            }
-
-            return decorations.HasFlag(Labeled)
-                ? "labeled"
-                : string.Empty;
+                NoDecoration => string.Empty,
+                Icon when !value.HasFlag(IconRight) => "left icon",
+                IconRight => "right icon",
+                LabeledRight => "right label",
+                Labeled when !value.HasFlag(LabeledRight) => "labeled",
+                _ => value.ToString().ToLower(),
+            };
         }
     }
 }

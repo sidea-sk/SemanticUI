@@ -15,6 +15,9 @@ namespace Sidea.SemanticUI.Blazor
             this.PrefixUiClass = prefixUiClass;
         }
 
+        [Parameter(CaptureUnmatchedValues = true)]
+        public Dictionary<string, object> UnmatchedAttributes { get; set; }
+
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
@@ -60,7 +63,7 @@ namespace Sidea.SemanticUI.Blazor
 
         protected Dictionary<string, object> Attributes()
         {
-            var attributes = new Dictionary<string, object>();
+            var attributes = this.UnmatchedAttributes ?? new Dictionary<string, object>();
             InitializeAttributes(attributes);
             return attributes;
         }
