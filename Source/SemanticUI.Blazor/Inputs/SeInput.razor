@@ -22,7 +22,8 @@
     [Parameter]
     public string Value { get; set; }
 
-    public Action<string> ValueChanged { get; set; }
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
 
     [Parameter]
     public string Placeholder { get; set; }
@@ -47,7 +48,7 @@
     private void InputValueChanged(ChangeEventArgs e)
     {
         this.Value = e.Value as string;
-        this.ValueChanged(this.Value);
+        this.ValueChanged.InvokeAsync(this.Value);
     }
 
     private IEnumerable<string> ClassesPrivate()

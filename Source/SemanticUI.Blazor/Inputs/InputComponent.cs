@@ -11,10 +11,14 @@ namespace Sidea.SemanticUI.Blazor
         }
 
         [Parameter]
+        public Size Size { get; set; }
+
+        [Parameter]
         public EditState State { get; set; }
 
         protected override IEnumerable<string> Classes()
         {
+            yield return this.Size.ToClass();
             yield return this.State.ToClass();
         }
     }
