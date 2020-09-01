@@ -13,6 +13,8 @@ namespace Sidea.SemanticUI.TagHelpers.Common.Items
 
         public Color Color { get; set; }
 
+        public bool IsHeader { get; set; }
+
         public bool IsActive { get; set; }
 
         public string RightIcon { get; set; }
@@ -33,6 +35,7 @@ namespace Sidea.SemanticUI.TagHelpers.Common.Items
         protected sealed override IEnumerable<string> Classes()
         {
             yield return this.Color.ToClass();
+            yield return "header".ToClassIf(this.IsHeader);
             yield return "active".ToClassIf(this.IsActive);
         }
     }

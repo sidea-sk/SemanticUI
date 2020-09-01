@@ -22,6 +22,8 @@ namespace Sidea.SemanticUI.TagHelpers.Common.Items
 
         public bool IsActive { get; set; }
 
+        public bool IsHeader { get; set; }
+
         public string RightIcon { get; set; }
 
         public ActiveUrlMatch ActiveUrlMatch { get; set; } = ActiveUrlMatch.Exact;
@@ -45,6 +47,7 @@ namespace Sidea.SemanticUI.TagHelpers.Common.Items
 
         private IEnumerable<string> CreateClasses()
         {
+            yield return "header".ToClassIf(this.IsHeader);
             yield return "active".ToClassIf(this.IsActiveClass());
             yield return this.Color.ToClass();
             yield return "item";
