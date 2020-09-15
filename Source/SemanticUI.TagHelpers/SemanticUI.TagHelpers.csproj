@@ -6,9 +6,19 @@
         <RootNamespace>Sidea.SemanticUI.TagHelpers  </RootNamespace>
         <RazorLangVersion>3.0</RazorLangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageProjectUrl>https://github.com/sidea-sk/SemanticUI</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/sidea-sk/SemanticUI</RepositoryUrl>
         <Version>1.0.9</Version>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <OutputPath>../../../Builds/SemanticUI.TagHelpers/Debug</OutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <OutputPath>../../../Builds/SemanticUI.TagHelpers/Release</OutputPath>
+    </PropertyGroup>
+    
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
