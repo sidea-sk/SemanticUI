@@ -16,11 +16,18 @@
         {
             app.UseStaticFiles(new StaticFileOptions
             {
-                RequestPath = "/sidea-core/semantic-ui",
+                RequestPath = requestPath.PrefixSlash(),
                 FileProvider = new Sidea.SemanticUI.Resources.ResourceFileProvider()
             });
 
             return app;
+        }
+
+        private static string PrefixSlash(this string value)
+        {
+            return value?.StartsWith("/") ?? false
+                ? value
+                : "/" + value;
         }
     }
 }
