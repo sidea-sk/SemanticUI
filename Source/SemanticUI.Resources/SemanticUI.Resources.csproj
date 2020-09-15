@@ -7,6 +7,16 @@
         <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
         <Version>1.0.0</Version>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageProjectUrl>https://github.com/sidea-sk/SemanticUI</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/sidea-sk/SemanticUI</RepositoryUrl>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <OutputPath>../../../Builds/SemanticUI.Resources/Debug</OutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <OutputPath>../../../Builds/SemanticUI.Resources/Release</OutputPath>
     </PropertyGroup>
 
     <ItemGroup>
