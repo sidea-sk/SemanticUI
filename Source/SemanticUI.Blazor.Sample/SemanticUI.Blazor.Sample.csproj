@@ -9,8 +9,4 @@
     <ProjectReference Include="..\SemanticUI.Resources\SemanticUI.Resources.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Modules\" />
-  </ItemGroup>
-
 </Project>
