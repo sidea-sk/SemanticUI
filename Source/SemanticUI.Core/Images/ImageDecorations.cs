@@ -21,13 +21,13 @@ namespace Sidea.SemanticUI.Core
 
     public static class ImageDecorationsExtensions
     {
-        private static readonly ImageDecorations[] allValues = Enum.GetValues(typeof(ImageDecorations))
+        private static readonly ImageDecorations[] _allValues = Enum.GetValues(typeof(ImageDecorations))
                 .Cast<ImageDecorations>()
                 .ToArray();
 
         public static string ToClass(this ImageDecorations decorations)
         {
-            var classes = allValues
+            var classes = _allValues
                 .Select(v =>
                 {
                     return decorations.HasFlag(v)

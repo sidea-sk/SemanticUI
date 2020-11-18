@@ -9,13 +9,6 @@
                 : size.ToString().ToLower();
         }
 
-        public static string ToClass(this Color color)
-        {
-            return color == Color.NoColor
-                ? string.Empty
-                : color.ToString().ToLower();
-        }
-
         public static string ToClass(this Severity severity)
         {
             return severity == Severity.NoSeverity

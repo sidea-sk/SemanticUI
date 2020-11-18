@@ -3,10 +3,14 @@
     public enum Emphasizes
     {
         NoEmphasizes,
-        Secondary,
         Primary,
+        Secondary,
         Positive,
-        Negative
+        Approve,
+        Ok,
+        Negative,
+        Deny,
+        Cancel
     }
 
     public static class EmphasizesExtensions

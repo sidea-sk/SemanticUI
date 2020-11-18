@@ -6,7 +6,7 @@ namespace Sidea.SemanticUI.Resources
     public class ResourceFileProvider : IFileProvider
     {
         private const string _assemblyPath = "semantic";
-        private ManifestEmbeddedFileProvider _provider = new ManifestEmbeddedFileProvider(typeof(ResourceFileProvider).Assembly);
+        private readonly ManifestEmbeddedFileProvider _provider = new ManifestEmbeddedFileProvider(typeof(ResourceFileProvider).Assembly);
 
         public IDirectoryContents GetDirectoryContents(string subpath)
         {

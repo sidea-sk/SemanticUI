@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using static Sidea.SemanticUI.Core.DimmerDecorations;
 
 namespace Sidea.SemanticUI.Core
@@ -9,7 +8,8 @@ namespace Sidea.SemanticUI.Core
     {
         NoDecoration = 0,
         Page         = 1 << 0,
-        Inverted     = 1 << 1
+        Inverted     = 1 << 1,
+        Blurring     = 1 << 2
     }
 
     public static class DimmerDecorationsExtensions
