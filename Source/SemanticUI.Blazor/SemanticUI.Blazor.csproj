@@ -9,7 +9,7 @@
         <PackageProjectUrl>https://github.com/sidea-sk/SemanticUI</PackageProjectUrl>
         <RepositoryUrl>https://github.com/sidea-sk/SemanticUI</RepositoryUrl>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>1.0.32</Version>
+        <Version>1.0.33</Version>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

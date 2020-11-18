@@ -17,4 +17,14 @@
         Grey,
         Black
     }
+
+    public static class ColorExtensions
+    {
+        public static string ToClass(this Color color)
+        {
+            return color == Color.NoColor
+                ? string.Empty
+                : color.ToString().ToLower();
+        }
+    }
 }
