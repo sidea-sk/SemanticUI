@@ -21,7 +21,7 @@ namespace Sidea.SemanticUI.Blazor
 
         protected bool HasRightIcon => !string.IsNullOrWhiteSpace(this.RightIcon);
 
-        protected sealed override IEnumerable<string> Classes()
+        protected override IEnumerable<string> Classes()
         {
             yield return this.Color.ToClass();
             yield return "active".ToClassIf(this.IsActive);

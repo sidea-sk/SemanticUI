@@ -9,3 +9,13 @@
         <i class="@RightIcon icon"></i>
     }
 </div>
+
+@code {
+    [Parameter]
+    public ItemDecorations Decorations { get; set; }
+
+    protected sealed override IEnumerable<string> Classes()
+    {
+        return base.Classes().Concat(new[] { this.Decorations.ToClass() });
+    }
+}
