@@ -23,7 +23,7 @@
     [Parameter]
     public bool Fitted { get; set; }
 
-    private string HtmlType => this.Type == CheckboxType.Radio ? "radion" : "checkbox";
+    private string HtmlType => this.Type == CheckboxType.Radio ? "radio" : "checkbox";
 
     protected override IEnumerable<string> Classes()
     {
