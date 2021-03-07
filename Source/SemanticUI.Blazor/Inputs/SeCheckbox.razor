@@ -2,7 +2,7 @@
 @namespace Sidea.SemanticUI.Blazor
 
 <div class="@Class()">
-    <input type="@HtmlType" checked="@Checked">
+    <input type="@HtmlType" @bind="Checked">
     <label>@Label</label>
 </div>
 
